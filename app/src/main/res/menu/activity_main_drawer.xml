@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_programacao"
+            android:icon="@drawable/ic_menu_programacao"
+            android:title="@string/programacao" />
+        <item
+            android:id="@+id/nav_pedido_oracao"
+            android:icon="@drawable/ic_menu_pedido_oracao"
+            android:title="@string/pedido_oracao" />
+    </group>
+</menu>
