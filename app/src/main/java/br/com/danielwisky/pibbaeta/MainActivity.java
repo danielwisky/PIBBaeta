@@ -9,11 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-
-import br.com.danielwisky.pibbaeta.fragment.PedidoOracaoFragment;
-import br.com.danielwisky.pibbaeta.fragment.ProgramacaoFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,7 +31,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        abreFragment(new ProgramacaoFragment());
+        displaySelectedScreen(R.id.nav_programacao);
     }
 
     @Override
@@ -48,54 +44,36 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return false; // false para nao habilitar o menu
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        // Creating fragment object
-        Fragment fragment = null;
-        if (id == R.id.nav_programacao) {
-            fragment = new ProgramacaoFragment();
-        } else if (id == R.id.nav_pedido_oracao) {
-            fragment = new PedidoOracaoFragment();
-        }
-
-        abreFragment(fragment);
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        //calling the method displayselectedscreen and passing the id of selected menu
+        displaySelectedScreen(item.getItemId());
+        //make this method blank
         return true;
     }
 
-    private void abreFragment(Fragment fragment) {
+    private void displaySelectedScreen(int itemId) {
+
+        // Creating fragment object
+        Fragment fragment = null;
+        switch (itemId) {
+            case R.id.nav_programacao:
+                fragment = new ProgramacaoFragment();
+                break;
+            case R.id.nav_pedido_oracao:
+                fragment = new PedidoOracaoFragment();
+                break;
+        }
+
+        //replacing the fragment
         if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);
             ft.commit();
         }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 }
