@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "53795467995",
+    "firebase_url": "https://pibbaeta.firebaseio.com",
+    "project_id": "pibbaeta",
+    "storage_bucket": "pibbaeta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53795467995:android:7e71bfc0fb046949",
+        "android_client_info": {
+          "package_name": "br.com.danielwisky.pibbaeta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53795467995-2kr3h2sut0crfqm20aun1c5gjolvel88.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.danielwisky.pibbaeta",
+            "certificate_hash": "6d8289125f34b142a8376cee07c3100ce6de2342"
+          }
+        },
+        {
+          "client_id": "53795467995-tfk6u0nep1hnbcircqa6ldu2j1nlabhg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPuyboRWt4w8GjVIn9QwnNfQ2espbarFk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53795467995-tfk6u0nep1hnbcircqa6ldu2j1nlabhg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

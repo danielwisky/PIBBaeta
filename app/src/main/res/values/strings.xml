@@ -1,18 +1,16 @@
 <resources>
-    <string name="app_name">PIBBaeta</string>
+  <string name="app_name">PIBBaeta</string>
 
-    <string name="navigation_drawer_open">Abrir navegação</string>
-    <string name="navigation_drawer_close">Fechar navegação</string>
+  <string name="navigation_drawer_open">Abrir navegação</string>
+  <string name="navigation_drawer_close">Fechar navegação</string>
 
-    <string name="action_settings">Configurações</string>
-    <string name="pedido_oracao">Pedido de Oração</string>
-    <string name="programacao">Programação</string>
+  <string name="action_settings">Configurações</string>
+  <string name="pedido_oracao">Pedido de Oração</string>
+  <string name="programacao">Programação</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="nome">Nome</string>
-    <string name="email">E-mail</string>
-    <string name="telefone">Telefone</string>
-    <string name="pedido">Pedido</string>
-    <string name="enviar_pedido">Enviar Pedido</string>
+  <string name="nome">Nome</string>
+  <string name="email">E-mail</string>
+  <string name="telefone">Telefone</string>
+  <string name="pedido">Pedido</string>
+  <string name="enviar_pedido">Enviar Pedido</string>
 </resources>
