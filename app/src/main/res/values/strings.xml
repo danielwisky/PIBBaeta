@@ -13,4 +13,7 @@
   <string name="telefone">Telefone</string>
   <string name="pedido">Pedido</string>
   <string name="enviar_pedido">Enviar Pedido</string>
+
+  <string name="campo_obrigatorio">Campo obrigatório.</string>
+  <string name="email_invalido">Email inválido.</string>
 </resources>
