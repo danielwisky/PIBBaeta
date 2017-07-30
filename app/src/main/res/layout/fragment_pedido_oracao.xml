@@ -14,7 +14,7 @@
       android:layout_marginTop="8dp">
 
       <EditText
-        android:id="@+id/p_nome"
+        android:id="@+id/ped_nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/nome"
@@ -28,7 +28,7 @@
       android:layout_marginTop="8dp">
 
       <EditText
-        android:id="@+id/p_email"
+        android:id="@+id/ped_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/email"
@@ -42,7 +42,7 @@
       android:layout_marginTop="8dp">
 
       <EditText
-        android:id="@+id/p_telefone"
+        android:id="@+id/ped_telefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -57,7 +57,7 @@
       android:layout_marginTop="8dp">
 
       <EditText
-        android:id="@+id/p_pedido"
+        android:id="@+id/ped_pedido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/pedido"
@@ -65,7 +65,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.v7.widget.AppCompatButton
-      android:id="@+id/p_enviar_pedido"
+      android:id="@+id/ped_botao_enviar_pedido"
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
       android:layout_marginBottom="24dp"

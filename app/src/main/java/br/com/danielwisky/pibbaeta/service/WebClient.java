@@ -1,7 +1,5 @@
 package br.com.danielwisky.pibbaeta.service;
 
-import br.com.danielwisky.pibbaeta.service.PedidoOracaoService;
-import br.com.danielwisky.pibbaeta.service.ProgramacaoService;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -9,7 +7,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class WebClient {
 
-  private static final String ENDPOINT_API = "http://IP_SERVER:8080/pibbaeta/rest/";
+  private static final String ENDPOINT_API = "http://192.168.0.12:8080/pibbaeta/rest/";
 
   private final Retrofit retrofit;
 

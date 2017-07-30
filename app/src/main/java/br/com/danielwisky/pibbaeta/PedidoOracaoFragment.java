@@ -8,6 +8,9 @@ import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -26,16 +29,16 @@ public class PedidoOracaoFragment extends Fragment {
 
   public static final String EMPTY = "";
 
-  @BindView(R.id.p_nome)
+  @BindView(R.id.ped_nome)
   EditText nome;
 
-  @BindView(R.id.p_email)
+  @BindView(R.id.ped_email)
   EditText email;
 
-  @BindView(R.id.p_telefone)
+  @BindView(R.id.ped_telefone)
   EditText telefone;
 
-  @BindView(R.id.p_pedido)
+  @BindView(R.id.ped_pedido)
   EditText pedido;
 
   private PedidoOracaoDao pedidoOracaoDao;
@@ -50,6 +53,9 @@ public class PedidoOracaoFragment extends Fragment {
     View view = inflater.inflate(R.layout.fragment_pedido_oracao, container, false);
     ButterKnife.bind(this, view);
 
+    setHasOptionsMenu(true);
+
+    // get the pedido oracao DAO
     PIBBaetaApplication application = (PIBBaetaApplication) this.getActivity().getApplication();
     DaoSession daoSession = application.getDaoSession();
     pedidoOracaoDao = daoSession.getPedidoOracaoDao();
@@ -63,7 +69,23 @@ public class PedidoOracaoFragment extends Fragment {
     getActivity().setTitle(R.string.pedido_oracao);
   }
 
-  @OnClick(R.id.p_enviar_pedido)
+  @Override
+  public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    inflater.inflate(R.menu.menu_pedido_oracao, menu);
+    super.onCreateOptionsMenu(menu, inflater);
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+      case R.id.ped_menu_enviar_pedido:
+        enviarPedido();
+        break;
+    }
+    return super.onOptionsItemSelected(item);
+  }
+
+  @OnClick(R.id.ped_botao_enviar_pedido)
   public void enviarPedido() {
 
     if (isFormularioValido()) {

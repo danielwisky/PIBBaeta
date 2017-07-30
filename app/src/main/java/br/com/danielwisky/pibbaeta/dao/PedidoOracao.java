@@ -1,5 +1,6 @@
 package br.com.danielwisky.pibbaeta.dao;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
@@ -17,6 +18,7 @@ import org.greenrobot.greendao.annotation.NotNull;
 public class PedidoOracao {
 
   @Id(autoincrement = true)
+  @JsonIgnore
   private Long id;
 
   @NotNull

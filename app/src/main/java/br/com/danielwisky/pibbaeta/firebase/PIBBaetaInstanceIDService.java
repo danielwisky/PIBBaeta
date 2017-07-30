@@ -1,7 +1,6 @@
 package br.com.danielwisky.pibbaeta.firebase;
 
 import android.util.Log;
-
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
