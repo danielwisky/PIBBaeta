@@ -8,5 +8,5 @@ import retrofit2.http.POST;
 public interface PedidoOracaoService {
 
   @POST("v1/pedido-oracao")
-  Call<Void> insere(@Body PedidoOracao pedidoOracao);
+  Call<Void> enviar(@Body PedidoOracao pedidoOracao);
 }

@@ -23,7 +23,8 @@ public class DaoSession extends AbstractDaoSession {
   private final ProgramacaoDao programacaoDao;
 
   public DaoSession(Database db, IdentityScopeType type,
-      Map<Class<? extends AbstractDao<?, ?>>, DaoConfig> daoConfigMap) {
+      Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
+          daoConfigMap) {
     super(db);
 
     pedidoOracaoDaoConfig = daoConfigMap.get(PedidoOracaoDao.class).clone();
@@ -51,4 +52,5 @@ public class DaoSession extends AbstractDaoSession {
   public ProgramacaoDao getProgramacaoDao() {
     return programacaoDao;
   }
+
 }

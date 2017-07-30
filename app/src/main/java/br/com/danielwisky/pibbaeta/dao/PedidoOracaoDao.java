@@ -25,9 +25,11 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
 
     public final static Property Id = new Property(0, Long.class, "id", true, "_id");
     public final static Property Nome = new Property(1, String.class, "nome", false, "NOME");
-    public final static Property Telefone = new Property(2, String.class, "telefone", false, "TELEFONE");
-    public final static Property Pedido = new Property(3, String.class, "pedido", false, "PEDIDO");
+    public final static Property Email = new Property(2, String.class, "email", false, "EMAIL");
+    public final static Property Telefone = new Property(3, String.class, "telefone", false, "TELEFONE");
+    public final static Property Pedido = new Property(4, String.class, "pedido", false, "PEDIDO");
   }
+
 
   public PedidoOracaoDao(DaoConfig config) {
     super(config);
@@ -45,8 +47,9 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
     db.execSQL("CREATE TABLE " + constraint + "\"PEDIDO_ORACAO\" (" + //
         "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
         "\"NOME\" TEXT NOT NULL ," + // 1: nome
-        "\"TELEFONE\" TEXT," + // 2: telefone
-        "\"PEDIDO\" TEXT NOT NULL );"); // 3: pedido
+        "\"EMAIL\" TEXT," + // 2: email
+        "\"TELEFONE\" TEXT," + // 3: telefone
+        "\"PEDIDO\" TEXT NOT NULL );"); // 4: pedido
   }
 
   /**
@@ -67,11 +70,16 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
     }
     stmt.bindString(2, entity.getNome());
 
+    String email = entity.getEmail();
+    if (email != null) {
+      stmt.bindString(3, email);
+    }
+
     String telefone = entity.getTelefone();
     if (telefone != null) {
-      stmt.bindString(3, telefone);
+      stmt.bindString(4, telefone);
     }
-    stmt.bindString(4, entity.getPedido());
+    stmt.bindString(5, entity.getPedido());
   }
 
   @Override
@@ -84,11 +92,16 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
     }
     stmt.bindString(2, entity.getNome());
 
+    String email = entity.getEmail();
+    if (email != null) {
+      stmt.bindString(3, email);
+    }
+
     String telefone = entity.getTelefone();
     if (telefone != null) {
-      stmt.bindString(3, telefone);
+      stmt.bindString(4, telefone);
     }
-    stmt.bindString(4, entity.getPedido());
+    stmt.bindString(5, entity.getPedido());
   }
 
   @Override
@@ -101,8 +114,9 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
     PedidoOracao entity = new PedidoOracao( //
         cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
         cursor.getString(offset + 1), // nome
-        cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // telefone
-        cursor.getString(offset + 3) // pedido
+        cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // email
+        cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // telefone
+        cursor.getString(offset + 4) // pedido
     );
     return entity;
   }
@@ -111,8 +125,9 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
   public void readEntity(Cursor cursor, PedidoOracao entity, int offset) {
     entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
     entity.setNome(cursor.getString(offset + 1));
-    entity.setTelefone(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
-    entity.setPedido(cursor.getString(offset + 3));
+    entity.setEmail(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+    entity.setTelefone(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
+    entity.setPedido(cursor.getString(offset + 4));
   }
 
   @Override
@@ -139,4 +154,5 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
   protected final boolean isEntityUpdateable() {
     return true;
   }
+
 }

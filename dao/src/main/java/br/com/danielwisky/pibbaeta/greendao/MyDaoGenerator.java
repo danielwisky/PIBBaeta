@@ -25,6 +25,7 @@ public class MyDaoGenerator {
     Entity pedido = schema.addEntity("PedidoOracao");
     pedido.addIdProperty().primaryKey().autoincrement();
     pedido.addStringProperty("nome").notNull();
+    pedido.addStringProperty("email");
     pedido.addStringProperty("telefone");
     pedido.addStringProperty("pedido").notNull();
     return pedido;

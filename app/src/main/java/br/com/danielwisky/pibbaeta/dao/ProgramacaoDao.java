@@ -177,4 +177,5 @@ public class ProgramacaoDao extends AbstractDao<Programacao, Long> {
   protected final boolean isEntityUpdateable() {
     return true;
   }
+
 }

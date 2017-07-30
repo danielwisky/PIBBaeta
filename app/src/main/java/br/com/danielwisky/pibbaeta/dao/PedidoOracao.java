@@ -21,6 +21,7 @@ public class PedidoOracao {
 
   @NotNull
   private String nome;
+  private String email;
   private String telefone;
 
   @NotNull
@@ -38,9 +39,10 @@ public class PedidoOracao {
   }
 
   @Generated
-  public PedidoOracao(Long id, String nome, String telefone, String pedido) {
+  public PedidoOracao(Long id, String nome, String email, String telefone, String pedido) {
     this.id = id;
     this.nome = nome;
+    this.email = email;
     this.telefone = telefone;
     this.pedido = pedido;
   }
@@ -65,6 +67,14 @@ public class PedidoOracao {
     this.nome = nome;
   }
 
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
   public String getTelefone() {
     return telefone;
   }
@@ -87,4 +97,5 @@ public class PedidoOracao {
 
   // KEEP METHODS - put your custom methods here
   // KEEP METHODS END
+
 }

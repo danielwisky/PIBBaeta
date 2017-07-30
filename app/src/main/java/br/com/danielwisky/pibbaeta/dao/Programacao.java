@@ -1,6 +1,5 @@
 package br.com.danielwisky.pibbaeta.dao;
 
-import java.util.Date;
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
@@ -30,10 +29,10 @@ public class Programacao {
   private String descricao;
 
   @NotNull
-  private Date dataInicio;
+  private java.util.Date dataInicio;
 
   @NotNull
-  private Date dataTermino;
+  private java.util.Date dataTermino;
 
   @NotNull
   private String local;
@@ -53,7 +52,8 @@ public class Programacao {
 
   @Generated
   public Programacao(Long id, String titulo, String tipoProgramacao, String descricao,
-      Date dataInicio, Date dataTermino, String local, String endereco, String urlBanner) {
+      java.util.Date dataInicio, java.util.Date dataTermino, String local, String endereco,
+      String urlBanner) {
     this.id = id;
     this.titulo = titulo;
     this.tipoProgramacao = tipoProgramacao;
@@ -110,26 +110,26 @@ public class Programacao {
   }
 
   @NotNull
-  public Date getDataInicio() {
+  public java.util.Date getDataInicio() {
     return dataInicio;
   }
 
   /**
    * Not-null value; ensure this value is available before it is saved to the database.
    */
-  public void setDataInicio(@NotNull Date dataInicio) {
+  public void setDataInicio(@NotNull java.util.Date dataInicio) {
     this.dataInicio = dataInicio;
   }
 
   @NotNull
-  public Date getDataTermino() {
+  public java.util.Date getDataTermino() {
     return dataTermino;
   }
 
   /**
    * Not-null value; ensure this value is available before it is saved to the database.
    */
-  public void setDataTermino(@NotNull Date dataTermino) {
+  public void setDataTermino(@NotNull java.util.Date dataTermino) {
     this.dataTermino = dataTermino;
   }
 
