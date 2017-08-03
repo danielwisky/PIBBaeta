@@ -32,7 +32,7 @@ public class PedidoOracao {
   // KEEP FIELDS - put your custom fields here
   // KEEP FIELDS END
 
-  @Generated
+  @Generated(hash = 872194074)
   public PedidoOracao() {
   }
 
@@ -40,13 +40,14 @@ public class PedidoOracao {
     this.id = id;
   }
 
-  @Generated
-  public PedidoOracao(Long id, String nome, String email, String telefone, String pedido) {
-    this.id = id;
-    this.nome = nome;
-    this.email = email;
-    this.telefone = telefone;
-    this.pedido = pedido;
+  @Generated(hash = 44036797)
+  public PedidoOracao(Long id, @NotNull String nome, String email, String telefone,
+          @NotNull String pedido) {
+      this.id = id;
+      this.nome = nome;
+      this.email = email;
+      this.telefone = telefone;
+      this.pedido = pedido;
   }
 
   public Long getId() {

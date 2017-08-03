@@ -16,8 +16,8 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
 
   private List<Programacao> programacoes;
 
-  public ProgramacaoAdapter() {
-    this.programacoes = new ArrayList<>();
+  public ProgramacaoAdapter(List<Programacao> programacoes) {
+    this.programacoes = programacoes;
   }
 
   @Override
@@ -38,9 +38,9 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
     return programacoes.size();
   }
 
-  public void setProgramacoes(List<Programacao> programacoes) {
-    this.programacoes = programacoes;
-    notifyDataSetChanged();
+  @Override
+  public int getItemViewType(int position) {
+    return R.layout.item_programacao;
   }
 
   class ProgramacaoViewHolder extends RecyclerView.ViewHolder {
@@ -61,7 +61,9 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
 
     void bind(Programacao programacao){
       titulo.setText(programacao.getTitulo());
-      tipo.setText(programacao.getTipoProgramacao());
+      if(programacao.getTipoProgramacao() != null) {
+        tipo.setText(programacao.getTipoProgramacao().getDescricao());
+      }
     }
   }
 }

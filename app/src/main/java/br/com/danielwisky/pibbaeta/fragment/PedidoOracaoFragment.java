@@ -1,4 +1,4 @@
-package br.com.danielwisky.pibbaeta;
+package br.com.danielwisky.pibbaeta.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,10 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import br.com.danielwisky.pibbaeta.PIBBaetaApplication;
+import br.com.danielwisky.pibbaeta.R;
+import br.com.danielwisky.pibbaeta.api.WebClient;
 import br.com.danielwisky.pibbaeta.dao.DaoSession;
 import br.com.danielwisky.pibbaeta.dao.PedidoOracao;
 import br.com.danielwisky.pibbaeta.dao.PedidoOracaoDao;
-import br.com.danielwisky.pibbaeta.service.WebClient;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

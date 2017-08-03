@@ -1,4 +1,4 @@
-package br.com.danielwisky.pibbaeta.service;
+package br.com.danielwisky.pibbaeta.api.service;
 
 import br.com.danielwisky.pibbaeta.dao.PedidoOracao;
 import retrofit2.Call;

@@ -8,17 +8,12 @@ import org.greenrobot.greendao.database.Database;
 
 public class PIBBaetaApplication extends Application {
 
-  /** A flag to show how easily you can switch from standard SQLite to the encrypted SQLCipher. */
-  public static final boolean ENCRYPTED = false;
-
   private DaoSession daoSession;
 
   @Override
   public void onCreate() {
     super.onCreate();
 
-    DevOpenHelper helper = new DevOpenHelper(this, ENCRYPTED ? "pibbaeta-db-encrypted" : "pibbaeta-db");
-    Database db = ENCRYPTED ? helper.getEncryptedWritableDb("super-secret") : helper.getWritableDb();
     daoSession = new DaoMaster(db).newSession();
   }
 
