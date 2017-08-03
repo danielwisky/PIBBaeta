@@ -9,7 +9,6 @@ import br.com.danielwisky.pibbaeta.R;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProgramacaoAdapter extends RecyclerView.Adapter {
@@ -61,9 +60,7 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
 
     void bind(Programacao programacao){
       titulo.setText(programacao.getTitulo());
-      if(programacao.getTipoProgramacao() != null) {
-        tipo.setText(programacao.getTipoProgramacao().getDescricao());
-      }
+      tipo.setText(programacao.getTipo());
     }
   }
 }

@@ -11,14 +11,13 @@ import android.view.ViewGroup;
 import br.com.danielwisky.pibbaeta.PIBBaetaApplication;
 import br.com.danielwisky.pibbaeta.R;
 import br.com.danielwisky.pibbaeta.adapter.ProgramacaoAdapter;
-import br.com.danielwisky.pibbaeta.api.sinc.ProgramacaoSincronizador;
+import br.com.danielwisky.pibbaeta.api.service.ProgramacaoService;
 import br.com.danielwisky.pibbaeta.dao.DaoSession;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
 import br.com.danielwisky.pibbaeta.dao.ProgramacaoDao;
 import br.com.danielwisky.pibbaeta.dao.ProgramacaoDao.Properties;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import java.util.ArrayList;
 import java.util.List;
 import org.greenrobot.greendao.query.Query;
 
@@ -27,7 +26,7 @@ public class ProgramacaoFragment extends Fragment {
   @BindView(R.id.prog_programacoes)
   RecyclerView recyclerView;
 
-  private ProgramacaoSincronizador sincronizador;
+  private ProgramacaoService sincronizador;
   private ProgramacaoDao programacaoDao;
   private Query<Programacao> programacaoQuery;
 
@@ -50,7 +49,7 @@ public class ProgramacaoFragment extends Fragment {
 
     programacaoQuery = programacaoDao.queryBuilder().orderDesc(Properties.DataInicio, Properties.DataTermino).build();
 
-    sincronizador = new ProgramacaoSincronizador(this.getContext(), daoSession);
+    sincronizador = new ProgramacaoService(this.getContext(), daoSession);
     sincronizador.sincronizar();
 
     updateProgramacoes();

@@ -8,12 +8,15 @@ import org.greenrobot.greendao.database.Database;
 
 public class PIBBaetaApplication extends Application {
 
+  private static final String PIBBAETA_DB = "pibbaeta-db";
+
   private DaoSession daoSession;
 
   @Override
   public void onCreate() {
     super.onCreate();
-
+    DevOpenHelper helper = new DevOpenHelper(this, PIBBAETA_DB);
+    Database db = helper.getWritableDb();
     daoSession = new DaoMaster(db).newSession();
   }
 

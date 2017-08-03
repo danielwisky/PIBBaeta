@@ -6,31 +6,33 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55a8dd98-1c84-4d3d-a6c4-86adbe225955" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/ProgramacaoSync.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/ProgramacaoService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/sinc/ProgramacaoSincronizador.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/TipoProgramacao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/TipoProgramacaoDao.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/PedidoOracaoFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/ProgramacaoFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/service/ProgramacaoService.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/service/PedidoOracaoService.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/PedidoOracaoService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/service/WebClient.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/WebClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/client/ProgramacaoClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/AgendaDto.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/PedidoOracaoDto.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/ProgramacaoDto.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/TipoProgramacaoDto.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/ProgramacaoSync.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoMaster.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoSession.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracaoDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/Programacao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/ProgramacaoDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/TipoProgramacao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/TipoProgramacaoDao.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/WebClient.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/client/WebClient.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/PedidoOracaoService.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/client/PedidoOracaoClient.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/sinc/ProgramacaoSincronizador.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/ProgramacaoService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/PIBBaetaApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/PIBBaetaApplication.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/adapter/ProgramacaoAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/adapter/ProgramacaoAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoMaster.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoMaster.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoSession.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracao.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracaoDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracaoDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/Programacao.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/Programacao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/ProgramacaoDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/ProgramacaoDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/PedidoOracaoFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/PedidoOracaoFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/ProgramacaoFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/ProgramacaoFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/src/main/java/br/com/danielwisky/pibbaeta/greendao/MyDaoGenerator.java" afterPath="$PROJECT_DIR$/dao/src/main/java/br/com/danielwisky/pibbaeta/greendao/MyDaoGenerator.java" />
     </list>
     <ignored path="PIBBaeta.iws" />
@@ -71,11 +73,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProgramacaoSincronizador.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/sinc/ProgramacaoSincronizador.java">
+      <file leaf-file-name="ProgramacaoService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/ProgramacaoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="127">
+              <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,14 +85,80 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PIBBaetaApplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/PIBBaetaApplication.java">
+      <file leaf-file-name="ProgramacaoFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/ProgramacaoFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            <state relative-caret-position="127">
+              <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProgramacaoClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/client/ProgramacaoClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProgramacaoAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/adapter/ProgramacaoAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/client/WebClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PedidoOracaoFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/PedidoOracaoFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="62">
+              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AgendaDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/AgendaDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TipoProgramacaoDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/TipoProgramacaoDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -518,6 +586,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="preBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare net.zetetic:android-database-sqlcipher:3.5.7" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareNetZeteticAndroidDatabaseSqlcipher357Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -1603,6 +1676,11 @@
                 <option name="name" value="transformResourcesWithMergeJavaResForRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare net.zetetic:android-database-sqlcipher:3.5.7" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareNetZeteticAndroidDatabaseSqlcipher357Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="compileReleaseSources" />
               </ExternalTaskPojo>
@@ -1921,7 +1999,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="C:\Users\danielwisky\AndroidStudioProjects\PIBBaeta" value="6005263005495" />
+        <entry key="C:\Users\danielwisky\AndroidStudioProjects\PIBBaeta" value="6005263725843" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2429,19 +2507,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/model/PedidoOracao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/model/Programacao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/firebase/PIBBaetaInstanceIDService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/firebase/PIBBaetaMessagingService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/modelo/PedidoOracao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/modelo/Programacao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/MyGenerator.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/com/example/MyDaoGenerator.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoMaster.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/helper/PedidoOracaoHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/server/WebClient.java" />
@@ -2453,13 +2518,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_pedido_oracao.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_pedido_oracao.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/sync/ProgramacaoSync.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/br/com/danielwisky/pibbaeta/greendao/MyDaoGenerator.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoSession.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracaoDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/ProgramacaoDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/TipoProgramacaoDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/Programacao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/PedidoOracaoFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/ProgramacaoFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/sync/ProgramacaoSincronizador.java" />
@@ -2467,19 +2526,38 @@
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/service/ProgramacaoService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/service/WebClient.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dto/ProgramacaoSync.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/WebClient.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/sync/ProgramacaoSyncService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/sync/ProgramacaoSyncService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/sinc/ProgramacaoSyncService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/ProgramacaoService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/PedidoOracaoFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/sinc/ProgramacaoSincronizador.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/ProgramacaoFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/adapter/ProgramacaoAdapter.java" />
         <option value="$PROJECT_DIR$/app/build/generated/source/greendao/br/com/danielwisky/pibbaeta/dao/DaoMaster.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/br/com/danielwisky/pibbaeta/greendao/MyDaoGenerator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoMaster.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoSession.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracaoDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/Programacao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/ProgramacaoDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/PedidoOracaoService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/WebClient.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/ProgramacaoClient.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/PedidoOracaoClient.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/sinc/ProgramacaoSincronizador.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/sinc/ProgramacaoService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/PIBBaetaApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/client/PedidoOracaoClient.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/PedidoOracaoDto.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/ProgramacaoSync.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/AgendaDto.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/client/ProgramacaoClient.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/ProgramacaoDto.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/TipoProgramacaoDto.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/ProgramacaoService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/adapter/ProgramacaoAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/client/WebClient.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/PedidoOracaoFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/ProgramacaoFragment.java" />
       </list>
     </option>
   </component>
@@ -2526,15 +2604,15 @@
               <option name="myItemId" value="PIBBaeta" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="PIBBaeta" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2547,8 +2625,8 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2559,6 +2637,36 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pibbaeta" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PIBBaeta" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pibbaeta" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2573,16 +2681,13 @@
     <property name="VectorAssetImportPath" value="C:\Users" />
     <property name="device.picker.selection" value="Nexus_5_API_24" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api" />
-    <property name="SearchEverywhereHistoryKey" value="theme&#9;ACTION&#9;Android.ShowThemeEditor&#10;.gitignore&#9;FILE&#9;file://C:/Users/danielwisky/AndroidStudioProjects/PIBBaeta/.gitignore&#10;keymap&#9;ACTION&#9;ChangeKeymap&#10;Plugins&#9;ACTION&#9;WelcomeScreen.Plugins&#10;plugins&#9;ACTION&#9;WelcomeScreen.Plugins" />
+    <property name="SearchEverywhereHistoryKey" value="PedidoOracao&#9;FILE&#9;file://C:/Users/danielwisky/AndroidStudioProjects/PIBBaeta/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracao.java&#10;theme&#9;ACTION&#9;Android.ShowThemeEditor&#10;.gitignore&#9;FILE&#9;file://C:/Users/danielwisky/AndroidStudioProjects/PIBBaeta/.gitignore&#10;keymap&#9;ACTION&#9;ChangeKeymap&#10;Plugins&#9;ACTION&#9;WelcomeScreen.Plugins&#10;plugins&#9;ACTION&#9;WelcomeScreen.Plugins" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../casadocodigo" />
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\danielwisky\AndroidStudioProjects\PIBBaeta\app\src\main\res" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="br.com.danielwisky.pibbaeta" />
     </key>
@@ -2590,10 +2695,14 @@
       <recent name="br.com.danielwisky.pibbaeta" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.danielwisky.pibbaeta.api.dto" />
       <recent name="br.com.danielwisky.pibbaeta.helper" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danielwisky\AndroidStudioProjects\PIBBaeta\app\src\main\res" />
+    </key>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Application.MyDaoGenerator">
     <configuration default="false" name="PIBBaeta:app []" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -2980,8 +3089,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.PIBBaeta:app []" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MyDaoGenerator" />
+        <item index="0" class="java.lang.String" itemvalue="Application.MyDaoGenerator" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.PIBBaeta:app []" />
         <item index="2" class="java.lang.String" itemvalue="Gradle.PIBBaeta:app [assembleRelease]" />
         <item index="3" class="java.lang.String" itemvalue="Gradle.PIBBaeta:app [androidDependencies]" />
         <item index="4" class="java.lang.String" itemvalue="Gradle.PIBBaeta [check]" />
@@ -3051,16 +3160,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.49092284" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34300342" sideWeight="0.49092284" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.50812066" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.50907713" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5904437" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39249146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39419794" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3073,7 +3182,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5123675" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25938568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36348122" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3110,33 +3219,11 @@
           <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="25" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/modelo/PedidoOracao.java" />
-    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3283,28 +3370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/br/com/danielwisky/pibbaeta/greendao/MyDaoGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="793">
-          <caret line="54" column="104" selection-start-line="54" selection-start-column="104" selection-end-line="54" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracaoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/TipoProgramacao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -3321,75 +3386,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/Programacao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/ProgramacaoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/PedidoOracaoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="40" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/WebClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/ProgramacaoSync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/PedidoOracaoFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.greenrobot/greendao/3.2.2/4b0a727cd9b59a7550794f3bec8024cf271b15d/greendao-3.2.2-sources.jar!/org/greenrobot/greendao/AbstractDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5">
           <caret line="270" column="17" selection-start-line="270" selection-start-column="17" selection-end-line="270" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/ProgramacaoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="191" column="17" selection-start-line="191" selection-start-column="17" selection-end-line="191" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -3426,38 +3426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/adapter/ProgramacaoAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-          <folding>
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/ProgramacaoFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="80" column="1" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="1" />
-          <folding>
-            <element signature="e#2080#2081#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/sinc/ProgramacaoSincronizador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build/generated/source/greendao/br/com/danielwisky/pibbaeta/dao/DaoMaster.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
@@ -3476,24 +3444,183 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
+        <state relative-caret-position="316">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/br/com/danielwisky/pibbaeta/greendao/MyDaoGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoMaster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1069">
-          <caret line="89" column="15" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="15" />
+        <state relative-caret-position="1462">
+          <caret line="100" column="92" selection-start-line="100" selection-start-column="92" selection-end-line="100" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/DaoSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/Programacao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1756">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracaoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2217">
+          <caret line="154" column="3" selection-start-line="154" selection-start-column="3" selection-end-line="154" selection-end-column="3" />
+          <folding>
+            <element signature="e#5126#5127#0" expanded="true" />
+            <element signature="e#5153#5154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/ProgramacaoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1903">
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/PIBBaetaApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        <state relative-caret-position="272">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/ProgramacaoSync.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/client/PedidoOracaoClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/client/ProgramacaoClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/dao/PedidoOracao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/TipoProgramacaoDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/AgendaDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/service/ProgramacaoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/ProgramacaoDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/dto/PedidoOracaoDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/adapter/ProgramacaoAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/api/client/WebClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/PedidoOracaoFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/danielwisky/pibbaeta/fragment/ProgramacaoFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

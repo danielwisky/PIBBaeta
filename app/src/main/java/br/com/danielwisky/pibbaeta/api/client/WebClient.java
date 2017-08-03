@@ -1,7 +1,5 @@
-package br.com.danielwisky.pibbaeta.api;
+package br.com.danielwisky.pibbaeta.api.client;
 
-import br.com.danielwisky.pibbaeta.api.service.PedidoOracaoService;
-import br.com.danielwisky.pibbaeta.api.service.ProgramacaoService;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -28,11 +26,11 @@ public class WebClient {
         .build();
   }
 
-  public PedidoOracaoService getPedidoOracaoService() {
-    return retrofit.create(PedidoOracaoService.class);
+  public PedidoOracaoClient getPedidoOracaoService() {
+    return retrofit.create(PedidoOracaoClient.class);
   }
 
-  public ProgramacaoService getProgramacaoService() {
-    return retrofit.create(ProgramacaoService.class);
+  public ProgramacaoClient getProgramacaoService() {
+    return retrofit.create(ProgramacaoClient.class);
   }
 }
