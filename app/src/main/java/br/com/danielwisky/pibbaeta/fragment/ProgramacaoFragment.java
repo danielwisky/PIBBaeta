@@ -26,7 +26,7 @@ public class ProgramacaoFragment extends Fragment {
   @BindView(R.id.prog_programacoes)
   RecyclerView recyclerView;
 
-  private ProgramacaoService sincronizador;
+  private ProgramacaoService programacaoService;
   private ProgramacaoDao programacaoDao;
   private Query<Programacao> programacaoQuery;
 
@@ -42,15 +42,14 @@ public class ProgramacaoFragment extends Fragment {
 
     setUpViews();
 
-    // get the programacao DAO
     PIBBaetaApplication application = (PIBBaetaApplication) this.getActivity().getApplication();
     DaoSession daoSession = application.getDaoSession();
     programacaoDao = daoSession.getProgramacaoDao();
 
     programacaoQuery = programacaoDao.queryBuilder().orderDesc(Properties.DataInicio, Properties.DataTermino).build();
 
-    sincronizador = new ProgramacaoService(this.getContext(), daoSession);
-    sincronizador.sincronizar();
+    programacaoService = new ProgramacaoService(this.getContext(), daoSession);
+    programacaoService.sincronizar();
 
     updateProgramacoes();
 

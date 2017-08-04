@@ -1,8 +1,11 @@
 package br.com.danielwisky.pibbaeta.api.service;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
 import br.com.danielwisky.pibbaeta.api.client.WebClient;
 import br.com.danielwisky.pibbaeta.api.dto.AgendaDto;
+import br.com.danielwisky.pibbaeta.api.dto.ProgramacaoDto;
 import br.com.danielwisky.pibbaeta.dao.DaoSession;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
 import br.com.danielwisky.pibbaeta.dao.ProgramacaoDao;
@@ -12,6 +15,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ProgramacaoService {
+
+  private static final String TAG = ProgramacaoService.class.getSimpleName();
+  private static final String PREFERENCES = ProgramacaoService.class.getName();
+  private static final String VERSAO_AGENDA = "VERSAO_AGENDA";
 
   private final Context context;
   private ProgramacaoDao programacaoDao;
@@ -31,26 +38,45 @@ public class ProgramacaoService {
       @Override
       public void onResponse(Call<AgendaDto> call, Response<AgendaDto> response) {
         AgendaDto agendaDto = response.body();
-        //List<Programacao> programacoes = programacaoSync.getProgramacoes();
-        //salvar(programacoes);
+        List<ProgramacaoDto> programacoes = agendaDto.getProgramacoes();
+        salvar(programacoes);
       }
 
       @Override
       public void onFailure(Call<AgendaDto> call, Throwable t) {
-
+        Log.e(TAG, t.getMessage());
       }
     };
   }
 
-  private void salvar(List<Programacao> programacoes) {
-
-    for (Programacao programacao : programacoes) {
-      Programacao exists = programacaoDao.load(programacao.getId());
+  private void salvar(List<ProgramacaoDto> programacoes) {
+    for (ProgramacaoDto dto : programacoes) {
+      Programacao exists = programacaoDao.load(dto.getId());
       if(exists != null) {
-
-      } else {
-        programacaoDao.insert(programacao);
+        if(dto.isAtivo()) {
+          programacaoDao.update(dto.toModel());
+        } else {
+          programacaoDao.deleteByKey(dto.getId());
+        }
+      } else if(dto.isAtivo()){
+        programacaoDao.insert(dto.toModel());
       }
     }
+  }
+
+  private void setVersao(Long versao) {
+    SharedPreferences preferences = getSharedPreferences();
+    SharedPreferences.Editor editor = preferences.edit();
+    editor.putLong(VERSAO_AGENDA, versao);
+    editor.commit();
+  }
+
+  private long getVersao() {
+    SharedPreferences preferences = getSharedPreferences();
+    return preferences.getLong(VERSAO_AGENDA, 0L);
+  }
+
+  private SharedPreferences getSharedPreferences() {
+    return this.context.getSharedPreferences(PREFERENCES, this.context.MODE_PRIVATE);
   }
 }

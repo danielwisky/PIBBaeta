@@ -15,4 +15,20 @@ public class PedidoOracaoDto {
     this.telefone = pedidoOracao.getTelefone();
     this.pedido = pedidoOracao.getPedido();
   }
+
+  public String getNome() {
+    return nome;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public String getTelefone() {
+    return telefone;
+  }
+
+  public String getPedido() {
+    return pedido;
+  }
 }
