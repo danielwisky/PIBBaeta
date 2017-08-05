@@ -1,6 +1,7 @@
 package br.com.danielwisky.pibbaeta.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,11 +10,14 @@ import br.com.danielwisky.pibbaeta.R;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class ProgramacaoAdapter extends RecyclerView.Adapter {
 
   private List<Programacao> programacoes;
+  private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM");
 
   public ProgramacaoAdapter(List<Programacao> programacoes) {
     this.programacoes = programacoes;
@@ -61,6 +65,7 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
     void bind(Programacao programacao){
       titulo.setText(programacao.getTitulo());
       tipo.setText(programacao.getTipo());
+      data.setText(simpleDateFormat.format(programacao.getDataInicio()));
     }
   }
 }
