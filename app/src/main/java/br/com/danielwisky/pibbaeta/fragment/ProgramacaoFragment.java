@@ -16,9 +16,12 @@ import br.com.danielwisky.pibbaeta.dao.DaoSession;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
 import br.com.danielwisky.pibbaeta.dao.ProgramacaoDao;
 import br.com.danielwisky.pibbaeta.dao.ProgramacaoDao.Properties;
+import br.com.danielwisky.pibbaeta.event.ProgramacaoEvent;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import java.util.List;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.greendao.query.Query;
 
 public class ProgramacaoFragment extends Fragment {
@@ -57,14 +60,26 @@ public class ProgramacaoFragment extends Fragment {
   }
 
   @Override
-  public void onResume() {
-    super.onResume();
+  public void onStart() {
+    super.onStart();
+    EventBus.getDefault().register(this);
+  }
+
+  @Override
+  public void onStop() {
+    super.onStop();
+    EventBus.getDefault().unregister(this);
   }
 
   @Override
   public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     getActivity().setTitle(R.string.programacao);
+  }
+
+  @Subscribe
+  public void programacaoEvent(ProgramacaoEvent event) {
+    updateProgramacoes();
   }
 
   private void setUpViews() {

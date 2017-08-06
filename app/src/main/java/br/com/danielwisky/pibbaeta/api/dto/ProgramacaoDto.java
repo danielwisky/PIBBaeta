@@ -1,7 +1,6 @@
 package br.com.danielwisky.pibbaeta.api.dto;
 
 import br.com.danielwisky.pibbaeta.dao.Programacao;
-import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Date;
 

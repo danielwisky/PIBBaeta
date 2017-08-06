@@ -1,7 +1,6 @@
 package br.com.danielwisky.pibbaeta.adapter;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Locale;
 
 public class ProgramacaoAdapter extends RecyclerView.Adapter {
 

@@ -9,7 +9,9 @@ import br.com.danielwisky.pibbaeta.api.dto.ProgramacaoDto;
 import br.com.danielwisky.pibbaeta.dao.DaoSession;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
 import br.com.danielwisky.pibbaeta.dao.ProgramacaoDao;
+import br.com.danielwisky.pibbaeta.event.ProgramacaoEvent;
 import java.util.List;
+import org.greenrobot.eventbus.EventBus;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,7 +31,9 @@ public class ProgramacaoService {
   }
 
   public void sincronizar() {
-    Call<AgendaDto> call = new WebClient().getProgramacaoService().listar();
+    Call<AgendaDto> call = temVersao() ?
+        new WebClient().getProgramacaoService().novos(getVersao()) :
+        new WebClient().getProgramacaoService().listar();
     call.enqueue(buscaProgramacaoCallback());
   }
 
@@ -38,8 +42,12 @@ public class ProgramacaoService {
       @Override
       public void onResponse(Call<AgendaDto> call, Response<AgendaDto> response) {
         AgendaDto agendaDto = response.body();
-        List<ProgramacaoDto> programacoes = agendaDto.getProgramacoes();
-        salvar(programacoes);
+        if(agendaDto != null) {
+          List<ProgramacaoDto> programacoes = agendaDto.getProgramacoes();
+          salvar(programacoes);
+          setVersao(agendaDto.getDataAtualizacao().getTime());
+          EventBus.getDefault().post(new ProgramacaoEvent());
+        }
       }
 
       @Override
@@ -74,6 +82,10 @@ public class ProgramacaoService {
   private long getVersao() {
     SharedPreferences preferences = getSharedPreferences();
     return preferences.getLong(VERSAO_AGENDA, 0L);
+  }
+
+  private boolean temVersao() {
+    return getVersao() > 0;
   }
 
   private SharedPreferences getSharedPreferences() {
