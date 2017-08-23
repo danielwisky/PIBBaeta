@@ -30,6 +30,8 @@ public class ProgramacaoDao extends AbstractDao<Programacao, Long> {
         public final static Property Local = new Property(6, String.class, "local", false, "LOCAL");
         public final static Property Endereco = new Property(7, String.class, "endereco", false, "ENDERECO");
         public final static Property UrlBanner = new Property(8, String.class, "urlBanner", false, "URL_BANNER");
+        public final static Property Observacao = new Property(9, String.class, "observacao", false, "OBSERVACAO");
+        public final static Property IdExterno = new Property(10, String.class, "idExterno", false, "ID_EXTERNO");
     }
 
 
@@ -53,7 +55,12 @@ public class ProgramacaoDao extends AbstractDao<Programacao, Long> {
                 "\"DATA_TERMINO\" INTEGER NOT NULL ," + // 5: dataTermino
                 "\"LOCAL\" TEXT NOT NULL ," + // 6: local
                 "\"ENDERECO\" TEXT," + // 7: endereco
-                "\"URL_BANNER\" TEXT);"); // 8: urlBanner
+                "\"URL_BANNER\" TEXT," + // 8: urlBanner
+                "\"OBSERVACAO\" TEXT," + // 9: observacao
+                "\"ID_EXTERNO\" TEXT);"); // 10: idExterno
+        // Add Indexes
+        db.execSQL("CREATE UNIQUE INDEX " + constraint + "IDX_PROGRAMACAO_ID_EXTERNO ON \"PROGRAMACAO\"" +
+                " (\"ID_EXTERNO\" ASC);");
     }
 
     /** Drops the underlying database table. */
@@ -86,6 +93,16 @@ public class ProgramacaoDao extends AbstractDao<Programacao, Long> {
         if (urlBanner != null) {
             stmt.bindString(9, urlBanner);
         }
+ 
+        String observacao = entity.getObservacao();
+        if (observacao != null) {
+            stmt.bindString(10, observacao);
+        }
+ 
+        String idExterno = entity.getIdExterno();
+        if (idExterno != null) {
+            stmt.bindString(11, idExterno);
+        }
     }
 
     @Override
@@ -112,6 +129,16 @@ public class ProgramacaoDao extends AbstractDao<Programacao, Long> {
         if (urlBanner != null) {
             stmt.bindString(9, urlBanner);
         }
+ 
+        String observacao = entity.getObservacao();
+        if (observacao != null) {
+            stmt.bindString(10, observacao);
+        }
+ 
+        String idExterno = entity.getIdExterno();
+        if (idExterno != null) {
+            stmt.bindString(11, idExterno);
+        }
     }
 
     @Override
@@ -130,7 +157,9 @@ public class ProgramacaoDao extends AbstractDao<Programacao, Long> {
             new java.util.Date(cursor.getLong(offset + 5)), // dataTermino
             cursor.getString(offset + 6), // local
             cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // endereco
-            cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8) // urlBanner
+            cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8), // urlBanner
+            cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9), // observacao
+            cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10) // idExterno
         );
         return entity;
     }
@@ -146,6 +175,8 @@ public class ProgramacaoDao extends AbstractDao<Programacao, Long> {
         entity.setLocal(cursor.getString(offset + 6));
         entity.setEndereco(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
         entity.setUrlBanner(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
+        entity.setObservacao(cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9));
+        entity.setIdExterno(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
      }
     
     @Override

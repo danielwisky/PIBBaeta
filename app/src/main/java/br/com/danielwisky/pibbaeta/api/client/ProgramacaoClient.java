@@ -1,6 +1,6 @@
 package br.com.danielwisky.pibbaeta.api.client;
 
-import br.com.danielwisky.pibbaeta.api.dto.AgendaDto;
+import br.com.danielwisky.pibbaeta.api.resources.response.AgendaResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -8,8 +8,8 @@ import retrofit2.http.Query;
 public interface ProgramacaoClient {
 
   @GET("v1/programacao")
-  Call<AgendaDto> listar();
+  Call<AgendaResponse> listar();
 
   @GET("v1/programacao")
-  Call<AgendaDto> novos(@Query("versao") Long versao);
+  Call<AgendaResponse> listar(@Query("versao") String versao);
 }

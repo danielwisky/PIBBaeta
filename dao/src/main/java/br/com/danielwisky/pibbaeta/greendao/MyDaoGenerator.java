@@ -2,6 +2,8 @@ package br.com.danielwisky.pibbaeta.greendao;
 
 import org.greenrobot.greendao.generator.DaoGenerator;
 import org.greenrobot.greendao.generator.Entity;
+import org.greenrobot.greendao.generator.Index;
+import org.greenrobot.greendao.generator.Property;
 import org.greenrobot.greendao.generator.Schema;
 
 public class MyDaoGenerator {
@@ -42,6 +44,14 @@ public class MyDaoGenerator {
     programacao.addStringProperty("local").notNull();
     programacao.addStringProperty("endereco");
     programacao.addStringProperty("urlBanner");
+    programacao.addStringProperty("observacao");
+    Property idExterno = programacao.addStringProperty("idExterno").getProperty();
+
+    Index idxIdExterno = new Index();
+    idxIdExterno.addProperty(idExterno);
+    idxIdExterno.makeUnique();
+
+    programacao.addIndex(idxIdExterno);
 
     return programacao;
   }

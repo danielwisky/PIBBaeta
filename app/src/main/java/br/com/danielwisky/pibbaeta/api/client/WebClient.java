@@ -7,7 +7,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class WebClient {
 
-  private static final String BASE_URL = "http://192.168.0.12:8080/pibbaeta/rest/";
+  private static final String BASE_URL = "http://192.168.0.12:8080/rest/";
 
   private final Retrofit retrofit;
 
@@ -24,6 +24,10 @@ public class WebClient {
         .addConverterFactory(JacksonConverterFactory.create())
         .client(client.build())
         .build();
+  }
+
+  public DispositivoClient getDispositivoService() {
+    return retrofit.create(DispositivoClient.class);
   }
 
   public PedidoOracaoClient getPedidoOracaoService() {

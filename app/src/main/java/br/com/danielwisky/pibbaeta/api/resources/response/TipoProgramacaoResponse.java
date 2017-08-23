@@ -1,16 +1,11 @@
-package br.com.danielwisky.pibbaeta.api.dto;
+package br.com.danielwisky.pibbaeta.api.resources.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TipoProgramacaoDto {
+public class TipoProgramacaoResponse {
 
-  private Integer id;
   private String descricao;
-
-  public Integer getId() {
-    return id;
-  }
 
   public String getDescricao() {
     return descricao;

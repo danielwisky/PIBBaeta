@@ -17,7 +17,7 @@ import android.widget.EditText;
 import br.com.danielwisky.pibbaeta.PIBBaetaApplication;
 import br.com.danielwisky.pibbaeta.R;
 import br.com.danielwisky.pibbaeta.api.client.WebClient;
-import br.com.danielwisky.pibbaeta.api.dto.PedidoOracaoDto;
+import br.com.danielwisky.pibbaeta.api.resources.request.PedidoOracaoRequest;
 import br.com.danielwisky.pibbaeta.dao.DaoSession;
 import br.com.danielwisky.pibbaeta.dao.PedidoOracao;
 import br.com.danielwisky.pibbaeta.dao.PedidoOracaoDao;
@@ -95,7 +95,7 @@ public class PedidoOracaoFragment extends Fragment {
 
       final PedidoOracao pedidoOracao = getPedidoOracao();
 
-      Call<Void> enviar = new WebClient().getPedidoOracaoService().enviar(new PedidoOracaoDto(pedidoOracao));
+      Call<Void> enviar = new WebClient().getPedidoOracaoService().enviar(new PedidoOracaoRequest(pedidoOracao));
       enviar.enqueue(new Callback<Void>() {
         @Override
         public void onResponse(Call<Void> call, Response<Void> response) {

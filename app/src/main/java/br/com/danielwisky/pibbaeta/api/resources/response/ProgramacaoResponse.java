@@ -1,13 +1,13 @@
-package br.com.danielwisky.pibbaeta.api.dto;
+package br.com.danielwisky.pibbaeta.api.resources.response;
 
 import br.com.danielwisky.pibbaeta.dao.Programacao;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProgramacaoDto {
+public class ProgramacaoResponse {
 
-  private Long id;
+  private String id;
   private String titulo;
   private String descricao;
   private Date dataInicio;
@@ -15,10 +15,10 @@ public class ProgramacaoDto {
   private String local;
   private String endereco;
   private String urlBanner;
-  private TipoProgramacaoDto tipo;
-  private StatusDto status;
+  private TipoProgramacaoResponse tipo;
+  private String status;
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
@@ -50,21 +50,16 @@ public class ProgramacaoDto {
     return urlBanner;
   }
 
-  public TipoProgramacaoDto getTipo() {
+  public TipoProgramacaoResponse getTipo() {
     return tipo;
   }
 
-  public StatusDto getStatus() {
+  public String getStatus() {
     return status;
-  }
-
-  public boolean isAtivo() {
-    return StatusDto.ATIVO.equals(getStatus());
   }
 
   public Programacao toModel() {
     Programacao programacao = new Programacao();
-    programacao.setId(this.getId());
     programacao.setTitulo(this.getTitulo());
     programacao.setDescricao(this.getDescricao());
     programacao.setDataInicio(this.getDataInicio());
@@ -73,6 +68,7 @@ public class ProgramacaoDto {
     programacao.setEndereco(this.getEndereco());
     programacao.setUrlBanner(this.getUrlBanner());
     programacao.setTipo(this.getTipo().getDescricao());
+    programacao.setIdExterno(this.getId());
     return programacao;
   }
 }

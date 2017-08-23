@@ -4,11 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 import br.com.danielwisky.pibbaeta.api.client.WebClient;
-import br.com.danielwisky.pibbaeta.api.dto.AgendaDto;
-import br.com.danielwisky.pibbaeta.api.dto.ProgramacaoDto;
+import br.com.danielwisky.pibbaeta.api.resources.response.AgendaResponse;
+import br.com.danielwisky.pibbaeta.api.resources.response.ProgramacaoResponse;
 import br.com.danielwisky.pibbaeta.dao.DaoSession;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
 import br.com.danielwisky.pibbaeta.dao.ProgramacaoDao;
+import br.com.danielwisky.pibbaeta.dao.ProgramacaoDao.Properties;
 import br.com.danielwisky.pibbaeta.event.ProgramacaoEvent;
 import java.util.List;
 import org.greenrobot.eventbus.EventBus;
@@ -21,6 +22,8 @@ public class ProgramacaoService {
   private static final String TAG = ProgramacaoService.class.getSimpleName();
   private static final String PREFERENCES = ProgramacaoService.class.getName();
   private static final String VERSAO_AGENDA = "VERSAO_AGENDA";
+  private static final String ATIVO = "ATIVO";
+  private static final String EMPTY = "";
 
   private final Context context;
   private ProgramacaoDao programacaoDao;
@@ -31,61 +34,66 @@ public class ProgramacaoService {
   }
 
   public void sincronizar() {
-    Call<AgendaDto> call = temVersao() ?
-        new WebClient().getProgramacaoService().novos(getVersao()) :
+    Call<AgendaResponse> call = temVersao() ?
+        new WebClient().getProgramacaoService().listar(getVersao()) :
         new WebClient().getProgramacaoService().listar();
     call.enqueue(buscaProgramacaoCallback());
   }
 
-  private Callback<AgendaDto> buscaProgramacaoCallback() {
-    return new Callback<AgendaDto>() {
+  private Callback<AgendaResponse> buscaProgramacaoCallback() {
+    return new Callback<AgendaResponse>() {
       @Override
-      public void onResponse(Call<AgendaDto> call, Response<AgendaDto> response) {
-        AgendaDto agendaDto = response.body();
-        if(agendaDto != null) {
-          List<ProgramacaoDto> programacoes = agendaDto.getProgramacoes();
+      public void onResponse(Call<AgendaResponse> call, Response<AgendaResponse> response) {
+        AgendaResponse agendaResponse = response.body();
+        if (agendaResponse != null) {
+          List<ProgramacaoResponse> programacoes = agendaResponse.getProgramacoes();
           salvar(programacoes);
-          setVersao(agendaDto.getDataAtualizacao().getTime());
+          setVersao(agendaResponse.getDataAtualizacao());
           EventBus.getDefault().post(new ProgramacaoEvent());
         }
       }
 
       @Override
-      public void onFailure(Call<AgendaDto> call, Throwable t) {
+      public void onFailure(Call<AgendaResponse> call, Throwable t) {
         Log.e(TAG, t.getMessage());
       }
     };
   }
 
-  private void salvar(List<ProgramacaoDto> programacoes) {
-    for (ProgramacaoDto dto : programacoes) {
-      Programacao exists = programacaoDao.load(dto.getId());
-      if(exists != null) {
-        if(dto.isAtivo()) {
-          programacaoDao.update(dto.toModel());
+  private void salvar(List<ProgramacaoResponse> programacoes) {
+    for (ProgramacaoResponse response : programacoes) {
+
+      Programacao programacao =
+          programacaoDao.queryBuilder().where(Properties.IdExterno.eq(response.getId())).unique();
+
+      if (programacao != null) {
+        if (ATIVO.equals(response.getStatus())) {
+          Programacao model = response.toModel();
+          model.setId(programacao.getId());
+          programacaoDao.update(model);
         } else {
-          programacaoDao.deleteByKey(dto.getId());
+          programacaoDao.deleteByKey(programacao.getId());
         }
-      } else if(dto.isAtivo()){
-        programacaoDao.insert(dto.toModel());
+      } else if (ATIVO.equals(response.getStatus())) {
+        programacaoDao.insert(response.toModel());
       }
     }
   }
 
-  private void setVersao(Long versao) {
+  private void setVersao(String versao) {
     SharedPreferences preferences = getSharedPreferences();
     SharedPreferences.Editor editor = preferences.edit();
-    editor.putLong(VERSAO_AGENDA, versao);
+    editor.putString(VERSAO_AGENDA, versao);
     editor.commit();
   }
 
-  private long getVersao() {
+  private String getVersao() {
     SharedPreferences preferences = getSharedPreferences();
-    return preferences.getLong(VERSAO_AGENDA, 0L);
+    return preferences.getString(VERSAO_AGENDA, EMPTY);
   }
 
   private boolean temVersao() {
-    return getVersao() > 0;
+    return !getVersao().isEmpty();
   }
 
   private SharedPreferences getSharedPreferences() {
