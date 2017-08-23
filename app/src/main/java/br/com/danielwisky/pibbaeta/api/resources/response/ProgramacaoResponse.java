@@ -16,6 +16,7 @@ public class ProgramacaoResponse {
   private String endereco;
   private String urlBanner;
   private TipoProgramacaoResponse tipo;
+  private String observacao;
   private String status;
 
   public String getId() {
@@ -54,6 +55,10 @@ public class ProgramacaoResponse {
     return tipo;
   }
 
+  public String getObservacao() {
+    return observacao;
+  }
+
   public String getStatus() {
     return status;
   }
@@ -68,6 +73,7 @@ public class ProgramacaoResponse {
     programacao.setEndereco(this.getEndereco());
     programacao.setUrlBanner(this.getUrlBanner());
     programacao.setTipo(this.getTipo().getDescricao());
+    programacao.setObservacao(this.getObservacao());
     programacao.setIdExterno(this.getId());
     return programacao;
   }

@@ -35,8 +35,8 @@ public class ProgramacaoService {
 
   public void sincronizar() {
     Call<AgendaResponse> call = temVersao() ?
-        new WebClient().getProgramacaoService().listar(getVersao()) :
-        new WebClient().getProgramacaoService().listar();
+        new WebClient().getProgramacaoClient().listar(getVersao()) :
+        new WebClient().getProgramacaoClient().listar();
     call.enqueue(buscaProgramacaoCallback());
   }
 

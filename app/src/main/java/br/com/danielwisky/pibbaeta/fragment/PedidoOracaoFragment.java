@@ -95,7 +95,7 @@ public class PedidoOracaoFragment extends Fragment {
 
       final PedidoOracao pedidoOracao = getPedidoOracao();
 
-      Call<Void> enviar = new WebClient().getPedidoOracaoService().enviar(new PedidoOracaoRequest(pedidoOracao));
+      Call<Void> enviar = new WebClient().getPedidoOracaoClient().enviar(new PedidoOracaoRequest(pedidoOracao));
       enviar.enqueue(new Callback<Void>() {
         @Override
         public void onResponse(Call<Void> call, Response<Void> response) {

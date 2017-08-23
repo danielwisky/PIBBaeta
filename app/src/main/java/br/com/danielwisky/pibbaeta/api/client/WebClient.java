@@ -26,15 +26,15 @@ public class WebClient {
         .build();
   }
 
-  public DispositivoClient getDispositivoService() {
+  public DispositivoClient getDispositivoClient() {
     return retrofit.create(DispositivoClient.class);
   }
 
-  public PedidoOracaoClient getPedidoOracaoService() {
+  public PedidoOracaoClient getPedidoOracaoClient() {
     return retrofit.create(PedidoOracaoClient.class);
   }
 
-  public ProgramacaoClient getProgramacaoService() {
+  public ProgramacaoClient getProgramacaoClient() {
     return retrofit.create(ProgramacaoClient.class);
   }
 }

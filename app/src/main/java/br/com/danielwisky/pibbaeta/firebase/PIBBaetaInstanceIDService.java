@@ -23,7 +23,7 @@ public class PIBBaetaInstanceIDService extends FirebaseInstanceIdService {
   }
 
   private void enviaTokenServidor(final String token) {
-    Call<Void> call = new WebClient().getDispositivoService().enviar(new DispositivoRequest(token));
+    Call<Void> call = new WebClient().getDispositivoClient().enviar(new DispositivoRequest(token));
     call.enqueue(new Callback<Void>() {
       @Override
       public void onResponse(Call<Void> call, Response<Void> response) {
