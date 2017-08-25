@@ -33,6 +33,12 @@ public class ProgramacaoService {
     this.programacaoDao = daoSession.getProgramacaoDao();
   }
 
+  public void sincronizar(AgendaResponse agendaResponse) {
+    if (validaVersao(agendaResponse.getDataAtualizacao())) {
+      salvar(agendaResponse);
+    }
+  }
+
   public void sincronizar() {
     Call<AgendaResponse> call = temVersao() ?
         new WebClient().getProgramacaoClient().listar(getVersao()) :
@@ -46,10 +52,7 @@ public class ProgramacaoService {
       public void onResponse(Call<AgendaResponse> call, Response<AgendaResponse> response) {
         AgendaResponse agendaResponse = response.body();
         if (agendaResponse != null) {
-          List<ProgramacaoResponse> programacoes = agendaResponse.getProgramacoes();
-          salvar(programacoes);
-          setVersao(agendaResponse.getDataAtualizacao());
-          EventBus.getDefault().post(new ProgramacaoEvent());
+          salvar(agendaResponse);
         }
       }
 
@@ -58,6 +61,13 @@ public class ProgramacaoService {
         Log.e(TAG, t.getMessage());
       }
     };
+  }
+
+  private void salvar(AgendaResponse agendaResponse) {
+    List<ProgramacaoResponse> programacoes = agendaResponse.getProgramacoes();
+    salvar(programacoes);
+    setVersao(agendaResponse.getDataAtualizacao());
+    EventBus.getDefault().post(new ProgramacaoEvent());
   }
 
   private void salvar(List<ProgramacaoResponse> programacoes) {
@@ -80,7 +90,7 @@ public class ProgramacaoService {
     }
   }
 
-  private void setVersao(String versao) {
+  private void setVersao(final String versao) {
     SharedPreferences preferences = getSharedPreferences();
     SharedPreferences.Editor editor = preferences.edit();
     editor.putString(VERSAO_AGENDA, versao);
@@ -94,6 +104,10 @@ public class ProgramacaoService {
 
   private boolean temVersao() {
     return !getVersao().isEmpty();
+  }
+
+  private boolean validaVersao(String versao) {
+    return true;
   }
 
   private SharedPreferences getSharedPreferences() {

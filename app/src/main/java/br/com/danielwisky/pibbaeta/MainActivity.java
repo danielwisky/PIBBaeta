@@ -12,9 +12,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import br.com.danielwisky.pibbaeta.fragment.PedidoOracaoFragment;
 import br.com.danielwisky.pibbaeta.fragment.ProgramacaoFragment;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
+
+  private static final String TOPIC_AGENDA = "agenda";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity
         this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
     drawer.addDrawerListener(toggle);
     toggle.syncState();
+
+    FirebaseMessaging.getInstance().subscribeToTopic(TOPIC_AGENDA);
 
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);

@@ -15,6 +15,8 @@ public class PIBBaetaInstanceIDService extends FirebaseInstanceIdService {
 
   @Override
   public void onTokenRefresh() {
+    super.onTokenRefresh();
+
     // Get updated InstanceID token.
     String refreshedToken = FirebaseInstanceId.getInstance().getToken();
     Log.d(TAG, "Refreshed token: " + refreshedToken);

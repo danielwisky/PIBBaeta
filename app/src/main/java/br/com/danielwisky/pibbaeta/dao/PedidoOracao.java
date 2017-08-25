@@ -40,12 +40,12 @@ public class PedidoOracao {
 
   @Generated(hash = 44036797)
   public PedidoOracao(Long id, @NotNull String nome, String email, String telefone,
-          @NotNull String pedido) {
-      this.id = id;
-      this.nome = nome;
-      this.email = email;
-      this.telefone = telefone;
-      this.pedido = pedido;
+      @NotNull String pedido) {
+    this.id = id;
+    this.nome = nome;
+    this.email = email;
+    this.telefone = telefone;
+    this.pedido = pedido;
   }
 
   public Long getId() {
