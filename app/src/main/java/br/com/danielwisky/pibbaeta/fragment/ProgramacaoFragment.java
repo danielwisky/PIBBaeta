@@ -22,6 +22,7 @@ import butterknife.ButterKnife;
 import java.util.List;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.greenrobot.greendao.query.Query;
 
 public class ProgramacaoFragment extends Fragment {
@@ -77,7 +78,7 @@ public class ProgramacaoFragment extends Fragment {
     getActivity().setTitle(R.string.programacao);
   }
 
-  @Subscribe
+  @Subscribe(threadMode = ThreadMode.MAIN)
   public void programacaoEvent(ProgramacaoEvent event) {
     updateProgramacoes();
   }

@@ -7,8 +7,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import br.com.danielwisky.pibbaeta.R;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
+import br.com.danielwisky.pibbaeta.delegate.ProgramacaoDelegate;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -64,6 +66,13 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
       titulo.setText(programacao.getTitulo());
       tipo.setText(programacao.getTipo());
       data.setText(simpleDateFormat.format(programacao.getDataInicio()));
+    }
+
+    @OnClick(R.id.prog_item)
+    void clickItem(){
+      Programacao programacao = programacoes.get(getAdapterPosition());
+      ProgramacaoDelegate delegate = (ProgramacaoDelegate) itemView.getContext();
+      delegate.lidaComProgramacaoSelecionada(programacao);
     }
   }
 }
