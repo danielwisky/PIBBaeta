@@ -1,5 +1,7 @@
 package br.com.danielwisky.pibbaeta;
 
+import static android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
+
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -10,12 +12,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import br.com.danielwisky.pibbaeta.dao.Programacao;
+import br.com.danielwisky.pibbaeta.delegate.ProgramacaoDelegate;
+import br.com.danielwisky.pibbaeta.fragment.DetalheProgramacaoFragment;
 import br.com.danielwisky.pibbaeta.fragment.PedidoOracaoFragment;
 import br.com.danielwisky.pibbaeta.fragment.ProgramacaoFragment;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity
-    implements NavigationView.OnNavigationItemSelectedListener {
+    implements ProgramacaoDelegate, OnNavigationItemSelectedListener {
 
   private static final String TOPIC_AGENDA = "agenda";
 
@@ -58,6 +63,15 @@ public class MainActivity extends AppCompatActivity
     displaySelectedScreen(item.getItemId());
     //make this method blank
     return true;
+  }
+
+  @Override
+  public void lidaComProgramacaoSelecionada(Programacao programacao) {
+    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+    DetalheProgramacaoFragment fragment = DetalheProgramacaoFragment.newInstance(programacao);
+    transaction.replace(R.id.content_frame, fragment);
+    transaction.addToBackStack(null);
+    transaction.commit();
   }
 
   private void displaySelectedScreen(int itemId) {

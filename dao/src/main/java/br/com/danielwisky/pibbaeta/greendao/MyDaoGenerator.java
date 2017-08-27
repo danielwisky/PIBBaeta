@@ -30,6 +30,7 @@ public class MyDaoGenerator {
     pedido.addStringProperty("email");
     pedido.addStringProperty("telefone");
     pedido.addStringProperty("pedido").notNull();
+    pedido.implementsInterface("android.os.Parcelable");
     return pedido;
   }
 
@@ -52,6 +53,7 @@ public class MyDaoGenerator {
     idxIdExterno.makeUnique();
 
     programacao.addIndex(idxIdExterno);
+    programacao.implementsInterface("android.os.Parcelable");
 
     return programacao;
   }
