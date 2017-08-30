@@ -3,6 +3,7 @@ package br.com.danielwisky.pibbaeta.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,16 +42,18 @@ public class ProgramacaoFragment extends Fragment {
       @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
 
-    View view = inflater.inflate(R.layout.fragment_programacao, container, false);
+    final View view = inflater.inflate(R.layout.fragment_programacao, container, false);
     ButterKnife.bind(this, view);
 
     setUpViews();
 
-    PIBBaetaApplication application = (PIBBaetaApplication) this.getActivity().getApplication();
-    DaoSession daoSession = application.getDaoSession();
+    final PIBBaetaApplication application = (PIBBaetaApplication) this.getActivity()
+        .getApplication();
+    final DaoSession daoSession = application.getDaoSession();
     programacaoDao = daoSession.getProgramacaoDao();
 
-    programacaoQuery = programacaoDao.queryBuilder().orderDesc(Properties.DataInicio, Properties.DataTermino).build();
+    programacaoQuery = programacaoDao.queryBuilder()
+        .orderDesc(Properties.DataInicio, Properties.DataTermino).build();
 
     programacaoService = new ProgramacaoService(this.getContext(), daoSession);
     programacaoService.sincronizar();
@@ -84,12 +87,17 @@ public class ProgramacaoFragment extends Fragment {
   }
 
   private void setUpViews() {
-    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+    final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+    recyclerView.setLayoutManager(linearLayoutManager);
     recyclerView.setHasFixedSize(true);
+
+    final DividerItemDecoration mDividerItemDecoration = new DividerItemDecoration(
+        recyclerView.getContext(), linearLayoutManager.getOrientation());
+    recyclerView.addItemDecoration(mDividerItemDecoration);
   }
 
   private void updateProgramacoes() {
-    List<Programacao> programacoes = programacaoQuery.list();
+    final List<Programacao> programacoes = programacaoQuery.list();
     recyclerView.setAdapter(new ProgramacaoAdapter(programacoes));
   }
 }

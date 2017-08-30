@@ -53,14 +53,14 @@ public class PedidoOracaoFragment extends Fragment {
       @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
 
-    View view = inflater.inflate(R.layout.fragment_pedido_oracao, container, false);
+    final View view = inflater.inflate(R.layout.fragment_pedido_oracao, container, false);
     ButterKnife.bind(this, view);
 
     setHasOptionsMenu(true);
 
     // get the pedido oracao DAO
-    PIBBaetaApplication application = (PIBBaetaApplication) this.getActivity().getApplication();
-    DaoSession daoSession = application.getDaoSession();
+    final PIBBaetaApplication application = (PIBBaetaApplication) this.getActivity().getApplication();
+    final DaoSession daoSession = application.getDaoSession();
     pedidoOracaoDao = daoSession.getPedidoOracaoDao();
 
     return view;
@@ -115,7 +115,7 @@ public class PedidoOracaoFragment extends Fragment {
 
   @NonNull
   private PedidoOracao getPedidoOracao() {
-    PedidoOracao pedidoOracao = new PedidoOracao();
+    final PedidoOracao pedidoOracao = new PedidoOracao();
     pedidoOracao.setNome(nome.getText().toString());
     pedidoOracao.setEmail(email.getText().toString());
     pedidoOracao.setTelefone(telefone.getText().toString());
