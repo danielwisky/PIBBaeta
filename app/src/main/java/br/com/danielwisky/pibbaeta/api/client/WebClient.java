@@ -13,10 +13,10 @@ public class WebClient {
 
   public WebClient() {
 
-    HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+    final HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
     interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-    OkHttpClient.Builder client = new OkHttpClient.Builder();
+    final OkHttpClient.Builder client = new OkHttpClient.Builder();
     client.addInterceptor(interceptor);
 
     retrofit = new Retrofit.Builder()

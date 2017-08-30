@@ -25,14 +25,14 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
 
   @Override
   public ProgramacaoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-    View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
+    final View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
     return new ProgramacaoViewHolder(view);
   }
 
   @Override
   public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-    ProgramacaoViewHolder viewHolder = (ProgramacaoViewHolder) holder;
-    Programacao programacao = programacoes.get(position);
+    final ProgramacaoViewHolder viewHolder = (ProgramacaoViewHolder) holder;
+    final Programacao programacao = programacoes.get(position);
     viewHolder.bind(programacao);
   }
 
@@ -70,8 +70,8 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
 
     @OnClick(R.id.prog_item)
     void clickItem(){
-      Programacao programacao = programacoes.get(getAdapterPosition());
-      ProgramacaoDelegate delegate = (ProgramacaoDelegate) itemView.getContext();
+      final Programacao programacao = programacoes.get(getAdapterPosition());
+      final ProgramacaoDelegate delegate = (ProgramacaoDelegate) itemView.getContext();
       delegate.lidaComProgramacaoSelecionada(programacao);
     }
   }

@@ -50,7 +50,7 @@ public class ProgramacaoService {
     return new Callback<AgendaResponse>() {
       @Override
       public void onResponse(Call<AgendaResponse> call, Response<AgendaResponse> response) {
-        AgendaResponse agendaResponse = response.body();
+        final AgendaResponse agendaResponse = response.body();
         if (agendaResponse != null) {
           salvar(agendaResponse);
         }
@@ -64,7 +64,7 @@ public class ProgramacaoService {
   }
 
   private void salvar(AgendaResponse agendaResponse) {
-    List<ProgramacaoResponse> programacoes = agendaResponse.getProgramacoes();
+    final List<ProgramacaoResponse> programacoes = agendaResponse.getProgramacoes();
     salvar(programacoes);
     setVersao(agendaResponse.getDataAtualizacao());
     EventBus.getDefault().post(new ProgramacaoEvent());
@@ -73,12 +73,12 @@ public class ProgramacaoService {
   private void salvar(List<ProgramacaoResponse> programacoes) {
     for (ProgramacaoResponse response : programacoes) {
 
-      Programacao programacao =
+      final Programacao programacao =
           programacaoDao.queryBuilder().where(Properties.IdExterno.eq(response.getId())).unique();
 
       if (programacao != null) {
         if (ATIVO.equals(response.getStatus())) {
-          Programacao model = response.toModel();
+          final Programacao model = response.toModel();
           model.setId(programacao.getId());
           programacaoDao.update(model);
         } else {
@@ -91,14 +91,14 @@ public class ProgramacaoService {
   }
 
   private void setVersao(final String versao) {
-    SharedPreferences preferences = getSharedPreferences();
-    SharedPreferences.Editor editor = preferences.edit();
+    final SharedPreferences preferences = getSharedPreferences();
+    final SharedPreferences.Editor editor = preferences.edit();
     editor.putString(VERSAO_AGENDA, versao);
     editor.commit();
   }
 
   private String getVersao() {
-    SharedPreferences preferences = getSharedPreferences();
+    final SharedPreferences preferences = getSharedPreferences();
     return preferences.getString(VERSAO_AGENDA, EMPTY);
   }
 

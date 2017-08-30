@@ -2,10 +2,10 @@ package br.com.danielwisky.pibbaeta;
 
 import static android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,7 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
 import br.com.danielwisky.pibbaeta.delegate.ProgramacaoDelegate;
-import br.com.danielwisky.pibbaeta.fragment.DetalheProgramacaoFragment;
 import br.com.danielwisky.pibbaeta.fragment.PedidoOracaoFragment;
 import br.com.danielwisky.pibbaeta.fragment.ProgramacaoFragment;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -23,6 +22,10 @@ public class MainActivity extends AppCompatActivity
     implements ProgramacaoDelegate, OnNavigationItemSelectedListener {
 
   private static final String TOPIC_AGENDA = "agenda";
+  public static final String ARGS_PROGRAMACAO = "programacao";
+
+  private DrawerLayout drawer;
+  private ActionBarDrawerToggle toggle;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +35,9 @@ public class MainActivity extends AppCompatActivity
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-        this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+    drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+    toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open,
+        R.string.navigation_drawer_close);
     drawer.addDrawerListener(toggle);
     toggle.syncState();
 
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity
 
   @Override
   public void onBackPressed() {
-    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+    drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     if (drawer.isDrawerOpen(GravityCompat.START)) {
       drawer.closeDrawer(GravityCompat.START);
     } else {
@@ -67,11 +70,14 @@ public class MainActivity extends AppCompatActivity
 
   @Override
   public void lidaComProgramacaoSelecionada(Programacao programacao) {
-    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-    DetalheProgramacaoFragment fragment = DetalheProgramacaoFragment.newInstance(programacao);
-    transaction.replace(R.id.content_frame, fragment);
-    transaction.addToBackStack(null);
-    transaction.commit();
+
+    final Bundle args = new Bundle();
+    final Intent intent = new Intent(this, DetalheProgramacaoActivity.class);
+
+    args.putParcelable(ARGS_PROGRAMACAO, programacao);
+    intent.putExtras(args);
+
+    startActivity(intent);
   }
 
   private void displaySelectedScreen(int itemId) {
@@ -89,9 +95,10 @@ public class MainActivity extends AppCompatActivity
 
     //replacing the fragment
     if (fragment != null) {
-      FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-      ft.replace(R.id.content_frame, fragment);
-      ft.commit();
+      getSupportFragmentManager()
+          .beginTransaction()
+          .replace(R.id.content_frame, fragment)
+          .commit();
     }
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

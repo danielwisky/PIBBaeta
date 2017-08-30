@@ -64,7 +64,7 @@ public class ProgramacaoResponse {
   }
 
   public Programacao toModel() {
-    Programacao programacao = new Programacao();
+    final Programacao programacao = new Programacao();
     programacao.setTitulo(this.getTitulo());
     programacao.setDescricao(this.getDescricao());
     programacao.setDataInicio(this.getDataInicio());
