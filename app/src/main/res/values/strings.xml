@@ -15,6 +15,12 @@
   <string name="pedido">Pedido</string>
   <string name="enviar_pedido">Enviar Pedido</string>
 
+  <string name="data">Data</string>
+  <string name="local">Local</string>
+  <string name="endereco">Endereço</string>
+  <string name="descricao">Descrição</string>
+  <string name="observacao">Observação</string>
+
   <string name="campo_obrigatorio">Campo obrigatório.</string>
   <string name="email_invalido">Email inválido.</string>
 
