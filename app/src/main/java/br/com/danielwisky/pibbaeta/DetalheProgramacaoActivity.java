@@ -8,6 +8,8 @@ import br.com.danielwisky.pibbaeta.dao.Programacao;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.squareup.picasso.Picasso;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class DetalheProgramacaoActivity extends AppCompatActivity {
 
@@ -31,6 +33,9 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
 
   private Programacao programacao;
 
+  private final Locale locale = new Locale("pt", "BR");
+  private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm", locale);
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -44,6 +49,10 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
 
     setTitle(programacao.getTipo());
 
+    populaCampos();
+  }
+
+  private void populaCampos() {
     if (programacao.getUrlBanner() != null
         && !programacao.getUrlBanner().isEmpty()) {
       Picasso.with(this)
@@ -52,6 +61,12 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
           .into(banner);
     }
 
+    String periodo =
+        String.format("%1$s - %2$s",
+            dateFormat.format(programacao.getDataInicio()),
+            dateFormat.format(programacao.getDataTermino()));
+
+    data.setText(periodo);
     local.setText(programacao.getLocal());
     endereco.setText(programacao.getEndereco());
     descricao.setText(programacao.getDescricao());
@@ -63,5 +78,4 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
     onBackPressed();
     return true;
   }
-
 }

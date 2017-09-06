@@ -1,108 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:padding="16dp">
+  android:layout_height="match_parent"
+  android:orientation="vertical">
 
-  <android.support.v7.widget.CardView
+  <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="4dp">
+    android:padding="16dp">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:orientation="vertical">
+      app:cardCornerRadius="4dp"
+      app:cardElevation="6dp">
 
-      <ImageView
-        android:id="@+id/prog_detail_banner"
+      <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop" />
+        android:orientation="vertical">
 
-      <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp">
-
-        <TextView
-          android:id="@+id/prog_detail_label_data"
-          android:textStyle="bold"
+        <ImageView
+          android:id="@+id/prog_detail_banner"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="@string/data" />
+          android:scaleType="centerCrop" />
 
-        <TextView
-          android:id="@+id/prog_detail_data"
+        <RelativeLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_marginBottom="8dp"
-          android:layout_below="@id/prog_detail_label_data" />
+          android:padding="10dp">
 
-        <TextView
-          android:id="@+id/prog_detail_label_local"
-          android:textStyle="bold"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@id/prog_detail_data"
-          android:text="@string/local" />
+          <TextView
+            android:id="@+id/prog_detail_label_data"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/data" />
 
-        <TextView
-          android:id="@+id/prog_detail_local"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="8dp"
-          android:layout_below="@+id/prog_detail_label_local" />
+          <TextView
+            android:id="@+id/prog_detail_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@id/prog_detail_label_data" />
 
-        <TextView
-          android:id="@+id/prog_detail_label_endereco"
-          android:textStyle="bold"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/prog_detail_local"
-          android:text="@string/endereco" />
+          <TextView
+            android:id="@+id/prog_detail_label_local"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/prog_detail_data"
+            android:text="@string/local" />
 
-        <TextView
-          android:id="@+id/prog_detail_endereco"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="8dp"
-          android:layout_below="@+id/prog_detail_label_endereco" />
+          <TextView
+            android:id="@+id/prog_detail_local"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@+id/prog_detail_label_local" />
 
-        <TextView
-          android:id="@+id/prog_detail_label_descricao"
-          android:textStyle="bold"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/prog_detail_endereco"
-          android:text="@string/descricao" />
+          <TextView
+            android:id="@+id/prog_detail_label_endereco"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prog_detail_local"
+            android:text="@string/endereco" />
 
-        <TextView
-          android:id="@+id/prog_detail_descricao"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="8dp"
-          android:layout_below="@+id/prog_detail_label_descricao" />
+          <TextView
+            android:id="@+id/prog_detail_endereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@+id/prog_detail_label_endereco" />
 
-        <TextView
-          android:id="@+id/prog_detail_label_observacao"
-          android:textStyle="bold"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/prog_detail_descricao"
-          android:text="@string/observacao" />
+          <TextView
+            android:id="@+id/prog_detail_label_descricao"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prog_detail_endereco"
+            android:text="@string/descricao" />
 
-        <TextView
-          android:id="@+id/prog_detail_observacao"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/prog_detail_label_observacao" />
+          <TextView
+            android:id="@+id/prog_detail_descricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@+id/prog_detail_label_descricao" />
 
-      </RelativeLayout>
+          <TextView
+            android:id="@+id/prog_detail_label_observacao"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prog_detail_descricao"
+            android:text="@string/observacao" />
 
-    </LinearLayout>
+          <TextView
+            android:id="@+id/prog_detail_observacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prog_detail_label_observacao" />
 
-  </android.support.v7.widget.CardView>
+        </RelativeLayout>
 
-</LinearLayout>
+      </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+  </LinearLayout>
+
+</ScrollView>

@@ -23,7 +23,6 @@ import br.com.danielwisky.pibbaeta.dao.PedidoOracao;
 import br.com.danielwisky.pibbaeta.dao.PedidoOracaoDao;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -58,7 +57,6 @@ public class PedidoOracaoFragment extends Fragment {
 
     setHasOptionsMenu(true);
 
-    // get the pedido oracao DAO
     final PIBBaetaApplication application = (PIBBaetaApplication) this.getActivity().getApplication();
     final DaoSession daoSession = application.getDaoSession();
     pedidoOracaoDao = daoSession.getPedidoOracaoDao();
@@ -88,7 +86,6 @@ public class PedidoOracaoFragment extends Fragment {
     return super.onOptionsItemSelected(item);
   }
 
-  @OnClick(R.id.ped_botao_enviar_pedido)
   public void enviarPedido() {
 
     if (isFormularioValido()) {
@@ -99,13 +96,15 @@ public class PedidoOracaoFragment extends Fragment {
       enviar.enqueue(new Callback<Void>() {
         @Override
         public void onResponse(Call<Void> call, Response<Void> response) {
-          Snackbar.make(getView(), getString(R.string.pedido_oracao_enviado_sucesso), Snackbar.LENGTH_SHORT).show();
+          Snackbar.make(getView(), getString(R.string.pedido_oracao_enviado_sucesso),
+              Snackbar.LENGTH_SHORT).show();
         }
 
         @Override
         public void onFailure(Call<Void> call, Throwable t) {
           pedidoOracaoDao.save(pedidoOracao);
-          Snackbar.make(getView(), getString(R.string.pedido_oracao_salvo_sucesso), Snackbar.LENGTH_SHORT).show();
+          Snackbar.make(getView(), getString(R.string.pedido_oracao_salvo_sucesso),
+              Snackbar.LENGTH_SHORT).show();
         }
       });
 
@@ -134,17 +133,17 @@ public class PedidoOracaoFragment extends Fragment {
 
     boolean valido = true;
 
-    if(TextUtils.isEmpty(nome.getText())) {
+    if (TextUtils.isEmpty(nome.getText())) {
       nome.setError(getString(R.string.campo_obrigatorio));
       valido = false;
     }
 
-    if(TextUtils.isEmpty(pedido.getText())) {
+    if (TextUtils.isEmpty(pedido.getText())) {
       pedido.setError(getString(R.string.campo_obrigatorio));
       valido = false;
     }
 
-    if(!isEmailValido(email.getText())) {
+    if (!isEmailValido(email.getText())) {
       email.setError(getString(R.string.email_invalido));
       valido = false;
     }

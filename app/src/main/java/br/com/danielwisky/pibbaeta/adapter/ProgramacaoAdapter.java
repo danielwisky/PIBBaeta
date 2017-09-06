@@ -13,11 +13,14 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class ProgramacaoAdapter extends RecyclerView.Adapter {
 
+  private final Locale locale = new Locale("pt", "BR");
+  private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", locale);
+
   private List<Programacao> programacoes;
-  private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM");
 
   public ProgramacaoAdapter(List<Programacao> programacoes) {
     this.programacoes = programacoes;
@@ -65,7 +68,7 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
     void bind(Programacao programacao){
       titulo.setText(programacao.getTitulo());
       tipo.setText(programacao.getTipo());
-      data.setText(simpleDateFormat.format(programacao.getDataInicio()));
+      data.setText(dateFormat.format(programacao.getDataInicio()));
     }
 
     @OnClick(R.id.prog_item)

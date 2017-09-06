@@ -47,12 +47,12 @@ public class ProgramacaoFragment extends Fragment {
 
     setUpViews();
 
-    final PIBBaetaApplication application = (PIBBaetaApplication) this.getActivity()
-        .getApplication();
+    final PIBBaetaApplication application = (PIBBaetaApplication) this.getActivity().getApplication();
     final DaoSession daoSession = application.getDaoSession();
     programacaoDao = daoSession.getProgramacaoDao();
 
-    programacaoQuery = programacaoDao.queryBuilder()
+    programacaoQuery = programacaoDao
+        .queryBuilder()
         .orderDesc(Properties.DataInicio, Properties.DataTermino).build();
 
     programacaoService = new ProgramacaoService(this.getContext(), daoSession);
