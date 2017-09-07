@@ -28,7 +28,7 @@ import org.greenrobot.greendao.query.Query;
 
 public class ProgramacaoFragment extends Fragment {
 
-  @BindView(R.id.prog_programacoes)
+  @BindView(R.id.programacoes)
   RecyclerView recyclerView;
 
   private ProgramacaoService programacaoService;

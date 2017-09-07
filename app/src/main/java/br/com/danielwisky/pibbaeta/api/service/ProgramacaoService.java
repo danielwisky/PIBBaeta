@@ -11,7 +11,11 @@ import br.com.danielwisky.pibbaeta.dao.Programacao;
 import br.com.danielwisky.pibbaeta.dao.ProgramacaoDao;
 import br.com.danielwisky.pibbaeta.dao.ProgramacaoDao.Properties;
 import br.com.danielwisky.pibbaeta.event.ProgramacaoEvent;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import org.greenrobot.eventbus.EventBus;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,12 +25,13 @@ public class ProgramacaoService {
 
   private static final String TAG = ProgramacaoService.class.getSimpleName();
   private static final String PREFERENCES = ProgramacaoService.class.getName();
+
   private static final String VERSAO_AGENDA = "VERSAO_AGENDA";
   private static final String ATIVO = "ATIVO";
   private static final String EMPTY = "";
 
   private final Context context;
-  private ProgramacaoDao programacaoDao;
+  private final ProgramacaoDao programacaoDao;
 
   public ProgramacaoService(Context context, DaoSession daoSession) {
     this.context = context;
@@ -107,7 +112,23 @@ public class ProgramacaoService {
   }
 
   private boolean validaVersao(String versao) {
-    return true;
+
+    if (!temVersao()) {
+      return true;
+    }
+
+    final Locale locale = new Locale("pt", "BR");
+    final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS", locale);
+
+    try {
+      final Date dataExterna = format.parse(versao);
+      final Date dataInterna = format.parse(getVersao());
+      return dataExterna.after(dataInterna);
+    } catch (ParseException e) {
+      Log.e(TAG, e.getMessage());
+    }
+
+    return false;
   }
 
   private SharedPreferences getSharedPreferences() {

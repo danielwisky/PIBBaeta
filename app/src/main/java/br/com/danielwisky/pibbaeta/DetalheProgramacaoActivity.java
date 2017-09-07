@@ -1,6 +1,7 @@
 package br.com.danielwisky.pibbaeta;
 
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,28 +14,31 @@ import java.util.Locale;
 
 public class DetalheProgramacaoActivity extends AppCompatActivity {
 
-  @BindView(R.id.prog_detail_banner)
+  @BindView(R.id.detalhe_banner)
   ImageView banner;
 
-  @BindView(R.id.prog_detail_data)
+  @BindView(R.id.detalhe_data)
   TextView data;
 
-  @BindView(R.id.prog_detail_local)
+  @BindView(R.id.detalhe_local)
   TextView local;
 
-  @BindView(R.id.prog_detail_endereco)
+  @BindView(R.id.detalhe_endereco)
   TextView endereco;
 
-  @BindView(R.id.prog_detail_descricao)
+  @BindView(R.id.detalhe_descricao)
   TextView descricao;
 
-  @BindView(R.id.prog_detail_observacao)
+  @BindView(R.id.detalhe_observacao)
   TextView observacao;
+
+  @BindView(R.id.detalhe_collapsing)
+  CollapsingToolbarLayout collapsing;
 
   private Programacao programacao;
 
   private final Locale locale = new Locale("pt", "BR");
-  private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm", locale);
+  private final SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm", locale);
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +47,15 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
 
     ButterKnife.bind(this);
 
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
     programacao = getIntent().getParcelableExtra(MainActivity.ARGS_PROGRAMACAO);
 
-    setTitle(programacao.getTipo());
+    collapsing.setTitle(programacao.getTitulo());
 
     populaCampos();
   }
 
   private void populaCampos() {
-    if (programacao.getUrlBanner() != null
-        && !programacao.getUrlBanner().isEmpty()) {
+    if (existeBanner()) {
       Picasso.with(this)
           .load(programacao.getUrlBanner())
           .placeholder(R.drawable.ic_enviar)
@@ -63,8 +64,8 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
 
     String periodo =
         String.format("%1$s - %2$s",
-            dateFormat.format(programacao.getDataInicio()),
-            dateFormat.format(programacao.getDataTermino()));
+            format.format(programacao.getDataInicio()),
+            format.format(programacao.getDataTermino()));
 
     data.setText(periodo);
     local.setText(programacao.getLocal());
@@ -73,9 +74,7 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
     observacao.setText(programacao.getObservacao());
   }
 
-  @Override
-  public boolean onSupportNavigateUp() {
-    onBackPressed();
-    return true;
+  private boolean existeBanner() {
+    return programacao.getUrlBanner() != null && !programacao.getUrlBanner().isEmpty();
   }
 }

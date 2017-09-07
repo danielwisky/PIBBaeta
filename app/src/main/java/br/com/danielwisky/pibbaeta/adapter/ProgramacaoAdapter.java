@@ -18,7 +18,7 @@ import java.util.Locale;
 public class ProgramacaoAdapter extends RecyclerView.Adapter {
 
   private final Locale locale = new Locale("pt", "BR");
-  private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", locale);
+  private final SimpleDateFormat format = new SimpleDateFormat("dd MMM", locale);
 
   private List<Programacao> programacoes;
 
@@ -51,13 +51,13 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
 
   class ProgramacaoViewHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R.id.prog_titulo)
+    @BindView(R.id.programacao_titulo)
     TextView titulo;
 
-    @BindView(R.id.prog_tipo)
+    @BindView(R.id.programacao_tipo)
     TextView tipo;
 
-    @BindView(R.id.prog_data)
+    @BindView(R.id.programacao_data)
     TextView data;
 
     ProgramacaoViewHolder(View view) {
@@ -68,10 +68,10 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
     void bind(Programacao programacao){
       titulo.setText(programacao.getTitulo());
       tipo.setText(programacao.getTipo());
-      data.setText(dateFormat.format(programacao.getDataInicio()));
+      data.setText(format.format(programacao.getDataInicio()));
     }
 
-    @OnClick(R.id.prog_item)
+    @OnClick(R.id.programacao_item)
     void clickItem(){
       final Programacao programacao = programacoes.get(getAdapterPosition());
       final ProgramacaoDelegate delegate = (ProgramacaoDelegate) itemView.getContext();

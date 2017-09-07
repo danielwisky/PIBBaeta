@@ -3,7 +3,7 @@
   xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <item
-    android:id="@+id/ped_menu_enviar_pedido"
+    android:id="@+id/pedido.enviar_pedido"
     android:icon="@drawable/ic_enviar"
     app:showAsAction="always"
     android:title="@string/enviar" />

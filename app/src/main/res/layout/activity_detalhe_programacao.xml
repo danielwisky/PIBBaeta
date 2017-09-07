@@ -1,116 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:orientation="vertical">
+  android:background="@android:color/background_light"
+  android:fitsSystemWindows="true">
 
-  <LinearLayout
+  <android.support.design.widget.AppBarLayout
+    android:id="@+id/detalhe.appbar"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:layout_height="300dp"
+    android:fitsSystemWindows="true"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    <android.support.v7.widget.CardView
+    <android.support.design.widget.CollapsingToolbarLayout
+      android:id="@+id/detalhe.collapsing"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fitsSystemWindows="true"
+      app:contentScrim="?attr/colorPrimary"
+      app:expandedTitleMarginEnd="64dp"
+      app:expandedTitleMarginStart="48dp"
+      app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+      <ImageView
+        android:id="@+id/detalhe.banner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:scaleType="centerCrop"
+        app:layout_collapseMode="parallax"
+        tools:ignore="ContentDescription" />
+
+      <android.support.v7.widget.Toolbar
+        android:id="@+id/detalhe.toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin"
+        app:title="Test" />
+    </android.support.design.widget.CollapsingToolbarLayout>
+  </android.support.design.widget.AppBarLayout>
+
+  <android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      app:cardCornerRadius="4dp"
-      app:cardElevation="6dp">
+      android:orientation="vertical"
+      android:padding="16dp">
 
-      <LinearLayout
+      <TextView
+        android:id="@+id/detalhe.label_data"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:text="@string/data" />
 
-        <ImageView
-          android:id="@+id/prog_detail_banner"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:scaleType="centerCrop" />
+      <TextView
+        android:id="@+id/detalhe.data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-        <RelativeLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:padding="10dp">
+      <TextView
+        android:id="@+id/detalhe.label_local"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/local" />
 
-          <TextView
-            android:id="@+id/prog_detail_label_data"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/data" />
+      <TextView
+        android:id="@+id/detalhe.local"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-          <TextView
-            android:id="@+id/prog_detail_data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_below="@id/prog_detail_label_data" />
+      <TextView
+        android:id="@+id/detalhe.label_endereco"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/endereco" />
 
-          <TextView
-            android:id="@+id/prog_detail_label_local"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/prog_detail_data"
-            android:text="@string/local" />
+      <TextView
+        android:id="@+id/detalhe.endereco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-          <TextView
-            android:id="@+id/prog_detail_local"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_below="@+id/prog_detail_label_local" />
+      <TextView
+        android:id="@+id/detalhe.label_descricao"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/descricao" />
 
-          <TextView
-            android:id="@+id/prog_detail_label_endereco"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/prog_detail_local"
-            android:text="@string/endereco" />
+      <TextView
+        android:id="@+id/detalhe.descricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-          <TextView
-            android:id="@+id/prog_detail_endereco"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_below="@+id/prog_detail_label_endereco" />
+      <TextView
+        android:id="@+id/detalhe.label_observacao"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/observacao" />
 
-          <TextView
-            android:id="@+id/prog_detail_label_descricao"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/prog_detail_endereco"
-            android:text="@string/descricao" />
+      <TextView
+        android:id="@+id/detalhe.observacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-          <TextView
-            android:id="@+id/prog_detail_descricao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_below="@+id/prog_detail_label_descricao" />
+    </LinearLayout>
 
-          <TextView
-            android:id="@+id/prog_detail_label_observacao"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/prog_detail_descricao"
-            android:text="@string/observacao" />
+  </android.support.v4.widget.NestedScrollView>
 
-          <TextView
-            android:id="@+id/prog_detail_observacao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/prog_detail_label_observacao" />
-
-        </RelativeLayout>
-
-      </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-  </LinearLayout>
-
-</ScrollView>
+</android.support.design.widget.CoordinatorLayout>

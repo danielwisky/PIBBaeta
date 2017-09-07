@@ -31,16 +31,16 @@ public class PedidoOracaoFragment extends Fragment {
 
   public static final String EMPTY = "";
 
-  @BindView(R.id.ped_nome)
+  @BindView(R.id.pedido_nome)
   EditText nome;
 
-  @BindView(R.id.ped_email)
+  @BindView(R.id.pedido_email)
   EditText email;
 
-  @BindView(R.id.ped_telefone)
+  @BindView(R.id.pedido_telefone)
   EditText telefone;
 
-  @BindView(R.id.ped_pedido)
+  @BindView(R.id.pedido_pedido)
   EditText pedido;
 
   private PedidoOracaoDao pedidoOracaoDao;
@@ -79,7 +79,7 @@ public class PedidoOracaoFragment extends Fragment {
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
-      case R.id.ped_menu_enviar_pedido:
+      case R.id.pedido_enviar_pedido:
         enviarPedido();
         break;
     }
