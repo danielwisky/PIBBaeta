@@ -1,8 +1,16 @@
 package br.com.danielwisky.pibbaeta;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
@@ -32,8 +40,14 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
   @BindView(R.id.detalhe_observacao)
   TextView observacao;
 
+  @BindView(R.id.detalhe_label_observacao)
+  TextView labelObservacao;
+
   @BindView(R.id.detalhe_collapsing)
   CollapsingToolbarLayout collapsing;
+
+  @BindView(R.id.detalhe_toolbar)
+  Toolbar toolbar;
 
   private Programacao programacao;
 
@@ -51,11 +65,39 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
 
     collapsing.setTitle(programacao.getTitulo());
 
+    setSupportActionBar(toolbar);
+    ActionBar actionBar = getSupportActionBar();
+    actionBar.setDisplayHomeAsUpEnabled(true);
+
     populaCampos();
   }
 
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.menu_detalhe, menu);
+    return super.onCreateOptionsMenu(menu);
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+      case R.id.detalhe_mapa:
+        abrirMapa();
+        break;
+    }
+    return super.onOptionsItemSelected(item);
+  }
+
+  @Override
+  public boolean onSupportNavigateUp() {
+    onBackPressed();
+    return true;
+  }
+
   private void populaCampos() {
-    if (existeBanner()) {
+
+    if (isNotEmpty(programacao.getUrlBanner())) {
       Picasso.with(this)
           .load(programacao.getUrlBanner())
           .placeholder(R.drawable.ic_enviar)
@@ -71,10 +113,21 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
     local.setText(programacao.getLocal());
     endereco.setText(programacao.getEndereco());
     descricao.setText(programacao.getDescricao());
-    observacao.setText(programacao.getObservacao());
+
+    if (isNotEmpty(programacao.getObservacao())) {
+      observacao.setText(programacao.getObservacao());
+    } else {
+      labelObservacao.setVisibility(View.INVISIBLE);
+    }
   }
 
-  private boolean existeBanner() {
-    return programacao.getUrlBanner() != null && !programacao.getUrlBanner().isEmpty();
+  private void abrirMapa() {
+    Intent intent = new Intent(Intent.ACTION_VIEW);
+    intent.setData(Uri.parse("geo:0,0?q=" + programacao.getEndereco()));
+    startActivity(intent);
+  }
+
+  private boolean isNotEmpty(final String value) {
+    return value != null && !value.isEmpty();
   }
 }

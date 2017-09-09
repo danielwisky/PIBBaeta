@@ -20,6 +20,7 @@
   <string name="endereco">Endereço</string>
   <string name="descricao">Descrição</string>
   <string name="observacao">Observação</string>
+  <string name="mapa">Mapa</string>
 
   <string name="campo_obrigatorio">Campo obrigatório.</string>
   <string name="email_invalido">Email inválido.</string>
@@ -27,6 +28,4 @@
   <string name="pedido_oracao_enviado_sucesso">Pedido de oração enviado com sucesso.</string>
   <string name="pedido_oracao_salvo_sucesso">Pedido de oração salvo com sucesso.</string>
 
-  <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
