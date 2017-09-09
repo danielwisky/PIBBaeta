@@ -25,6 +25,9 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
   @BindView(R.id.detalhe_banner)
   ImageView banner;
 
+  @BindView(R.id.detalhe_titulo)
+  TextView titulo;
+
   @BindView(R.id.detalhe_data)
   TextView data;
 
@@ -52,7 +55,7 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
   private Programacao programacao;
 
   private final Locale locale = new Locale("pt", "BR");
-  private final SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm", locale);
+  private final SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +65,7 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
     ButterKnife.bind(this);
 
     programacao = getIntent().getParcelableExtra(MainActivity.ARGS_PROGRAMACAO);
-
-    collapsing.setTitle(programacao.getTitulo());
+    collapsing.setTitle(programacao.getTipo());
 
     setSupportActionBar(toolbar);
     ActionBar actionBar = getSupportActionBar();
@@ -100,7 +102,6 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
     if (isNotEmpty(programacao.getUrlBanner())) {
       Picasso.with(this)
           .load(programacao.getUrlBanner())
-          .placeholder(R.drawable.ic_enviar)
           .into(banner);
     }
 
@@ -110,6 +111,7 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
             format.format(programacao.getDataTermino()));
 
     data.setText(periodo);
+    titulo.setText(programacao.getTitulo());
     local.setText(programacao.getLocal());
     endereco.setText(programacao.getEndereco());
     descricao.setText(programacao.getDescricao());

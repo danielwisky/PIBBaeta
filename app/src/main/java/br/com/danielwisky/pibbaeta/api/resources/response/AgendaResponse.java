@@ -1,4 +1,5 @@
 package br.com.danielwisky.pibbaeta.api.resources.response;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 
