@@ -28,6 +28,8 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
     public final static Property Email = new Property(2, String.class, "email", false, "EMAIL");
     public final static Property Telefone = new Property(3, String.class, "telefone", false, "TELEFONE");
     public final static Property Pedido = new Property(4, String.class, "pedido", false, "PEDIDO");
+    public final static Property MeuPedido = new Property(5, Boolean.class, "meuPedido", false, "MEU_PEDIDO");
+    public final static Property IdExterno = new Property(6, String.class, "idExterno", false, "ID_EXTERNO");
   }
 
   public PedidoOracaoDao(DaoConfig config) {
@@ -48,7 +50,12 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
         "\"NOME\" TEXT NOT NULL ," + // 1: nome
         "\"EMAIL\" TEXT," + // 2: email
         "\"TELEFONE\" TEXT," + // 3: telefone
-        "\"PEDIDO\" TEXT NOT NULL );"); // 4: pedido
+        "\"PEDIDO\" TEXT NOT NULL ," + // 4: pedido
+        "\"MEU_PEDIDO\" INTEGER," + // 5: meuPedido
+        "\"ID_EXTERNO\" TEXT);"); // 6: idExterno
+    // Add Indexes
+    db.execSQL(
+        "CREATE UNIQUE INDEX " + constraint + "IDX_PEDIDO_ORACAO_ID_EXTERNO ON \"PEDIDO_ORACAO\"" + " (\"ID_EXTERNO\");");
   }
 
   /**
@@ -79,6 +86,16 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
       stmt.bindString(4, telefone);
     }
     stmt.bindString(5, entity.getPedido());
+
+    Boolean meuPedido = entity.getMeuPedido();
+    if (meuPedido != null) {
+      stmt.bindLong(6, meuPedido ? 1L : 0L);
+    }
+
+    String idExterno = entity.getIdExterno();
+    if (idExterno != null) {
+      stmt.bindString(7, idExterno);
+    }
   }
 
   @Override
@@ -101,6 +118,16 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
       stmt.bindString(4, telefone);
     }
     stmt.bindString(5, entity.getPedido());
+
+    Boolean meuPedido = entity.getMeuPedido();
+    if (meuPedido != null) {
+      stmt.bindLong(6, meuPedido ? 1L : 0L);
+    }
+
+    String idExterno = entity.getIdExterno();
+    if (idExterno != null) {
+      stmt.bindString(7, idExterno);
+    }
   }
 
   @Override
@@ -115,7 +142,9 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
         cursor.getString(offset + 1), // nome
         cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // email
         cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // telefone
-        cursor.getString(offset + 4) // pedido
+        cursor.getString(offset + 4), // pedido
+        cursor.isNull(offset + 5) ? null : cursor.getShort(offset + 5) != 0, // meuPedido
+        cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6) // idExterno
     );
     return entity;
   }
@@ -127,6 +156,8 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
     entity.setEmail(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
     entity.setTelefone(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
     entity.setPedido(cursor.getString(offset + 4));
+    entity.setMeuPedido(cursor.isNull(offset + 5) ? null : cursor.getShort(offset + 5) != 0);
+    entity.setIdExterno(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
   }
 
   @Override

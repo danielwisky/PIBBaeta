@@ -18,9 +18,11 @@ public class DaoSession extends AbstractDaoSession {
 
   private final DaoConfig pedidoOracaoDaoConfig;
   private final DaoConfig programacaoDaoConfig;
+  private final DaoConfig feedbackDaoConfig;
 
   private final PedidoOracaoDao pedidoOracaoDao;
   private final ProgramacaoDao programacaoDao;
+  private final FeedbackDao feedbackDao;
 
   public DaoSession(Database db, IdentityScopeType type,
       Map<Class<? extends AbstractDao<?, ?>>, DaoConfig> daoConfigMap) {
@@ -32,16 +34,22 @@ public class DaoSession extends AbstractDaoSession {
     programacaoDaoConfig = daoConfigMap.get(ProgramacaoDao.class).clone();
     programacaoDaoConfig.initIdentityScope(type);
 
+    feedbackDaoConfig = daoConfigMap.get(FeedbackDao.class).clone();
+    feedbackDaoConfig.initIdentityScope(type);
+
     pedidoOracaoDao = new PedidoOracaoDao(pedidoOracaoDaoConfig, this);
     programacaoDao = new ProgramacaoDao(programacaoDaoConfig, this);
+    feedbackDao = new FeedbackDao(feedbackDaoConfig, this);
 
     registerDao(PedidoOracao.class, pedidoOracaoDao);
     registerDao(Programacao.class, programacaoDao);
+    registerDao(Feedback.class, feedbackDao);
   }
 
   public void clear() {
     pedidoOracaoDaoConfig.clearIdentityScope();
     programacaoDaoConfig.clearIdentityScope();
+    feedbackDaoConfig.clearIdentityScope();
   }
 
   public PedidoOracaoDao getPedidoOracaoDao() {
@@ -52,4 +60,7 @@ public class DaoSession extends AbstractDaoSession {
     return programacaoDao;
   }
 
+  public FeedbackDao getFeedbackDao() {
+    return feedbackDao;
+  }
 }

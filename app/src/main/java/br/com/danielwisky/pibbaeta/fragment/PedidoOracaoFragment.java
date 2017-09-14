@@ -1,5 +1,7 @@
 package br.com.danielwisky.pibbaeta.fragment;
 
+import static android.text.TextUtils.isEmpty;
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -133,12 +135,12 @@ public class PedidoOracaoFragment extends Fragment {
 
     boolean valido = true;
 
-    if (TextUtils.isEmpty(nome.getText())) {
+    if (isEmpty(nome.getText())) {
       nome.setError(getString(R.string.campo_obrigatorio));
       valido = false;
     }
 
-    if (TextUtils.isEmpty(pedido.getText())) {
+    if (isEmpty(pedido.getText())) {
       pedido.setError(getString(R.string.campo_obrigatorio));
       valido = false;
     }
@@ -152,6 +154,6 @@ public class PedidoOracaoFragment extends Fragment {
   }
 
   private boolean isEmailValido(CharSequence email) {
-    return TextUtils.isEmpty(email) || Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    return isEmpty(email) || Patterns.EMAIL_ADDRESS.matcher(email).matches();
   }
 }

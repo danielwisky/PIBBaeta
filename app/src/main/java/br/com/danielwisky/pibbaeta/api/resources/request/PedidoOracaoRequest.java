@@ -9,7 +9,7 @@ public class PedidoOracaoRequest {
   private String telefone;
   private String pedido;
 
-  public PedidoOracaoRequest(PedidoOracao pedidoOracao) {
+  public PedidoOracaoRequest(final PedidoOracao pedidoOracao) {
     this.nome = pedidoOracao.getNome();
     this.email = pedidoOracao.getEmail();
     this.telefone = pedidoOracao.getTelefone();

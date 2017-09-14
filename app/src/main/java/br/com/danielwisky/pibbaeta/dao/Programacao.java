@@ -75,7 +75,7 @@ public class Programacao implements Parcelable {
   };
   // KEEP FIELDS END
 
-  @Generated(hash = 2057270027)
+  @Generated
   public Programacao() {
   }
 
@@ -83,22 +83,21 @@ public class Programacao implements Parcelable {
     this.id = id;
   }
 
-  @Generated(hash = 381865608)
-  public Programacao(Long id, @NotNull String titulo, @NotNull String descricao,
-          @NotNull String tipo, @NotNull java.util.Date dataInicio,
-          @NotNull java.util.Date dataTermino, @NotNull String local, String endereco,
-          String urlBanner, String observacao, String idExterno) {
-      this.id = id;
-      this.titulo = titulo;
-      this.descricao = descricao;
-      this.tipo = tipo;
-      this.dataInicio = dataInicio;
-      this.dataTermino = dataTermino;
-      this.local = local;
-      this.endereco = endereco;
-      this.urlBanner = urlBanner;
-      this.observacao = observacao;
-      this.idExterno = idExterno;
+  @Generated
+  public Programacao(Long id, String titulo, String descricao, String tipo,
+      java.util.Date dataInicio, java.util.Date dataTermino, String local, String endereco,
+      String urlBanner, String observacao, String idExterno) {
+    this.id = id;
+    this.titulo = titulo;
+    this.descricao = descricao;
+    this.tipo = tipo;
+    this.dataInicio = dataInicio;
+    this.dataTermino = dataTermino;
+    this.local = local;
+    this.endereco = endereco;
+    this.urlBanner = urlBanner;
+    this.observacao = observacao;
+    this.idExterno = idExterno;
   }
 
   public Long getId() {

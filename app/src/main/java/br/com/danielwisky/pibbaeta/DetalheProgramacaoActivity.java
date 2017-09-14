@@ -68,7 +68,8 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
     collapsing.setTitle(programacao.getTipo());
 
     setSupportActionBar(toolbar);
-    ActionBar actionBar = getSupportActionBar();
+
+    final ActionBar actionBar = getSupportActionBar();
     actionBar.setDisplayHomeAsUpEnabled(true);
 
     populaCampos();
@@ -76,7 +77,7 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
-    MenuInflater inflater = getMenuInflater();
+    final MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.menu_detalhe, menu);
     return super.onCreateOptionsMenu(menu);
   }
@@ -105,7 +106,7 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
           .into(banner);
     }
 
-    String periodo =
+    final String periodo =
         String.format("%1$s - %2$s",
             format.format(programacao.getDataInicio()),
             format.format(programacao.getDataTermino()));
@@ -124,7 +125,7 @@ public class DetalheProgramacaoActivity extends AppCompatActivity {
   }
 
   private void abrirMapa() {
-    Intent intent = new Intent(Intent.ACTION_VIEW);
+    final Intent intent = new Intent(Intent.ACTION_VIEW);
     intent.setData(Uri.parse("geo:0,0?q=" + programacao.getEndereco()));
     startActivity(intent);
   }

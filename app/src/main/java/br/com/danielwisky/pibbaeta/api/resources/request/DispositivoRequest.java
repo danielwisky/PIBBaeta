@@ -4,7 +4,7 @@ public class DispositivoRequest {
 
   private String token;
 
-  public DispositivoRequest(String token) {
+  public DispositivoRequest(final String token) {
     this.token = token;
   }
 

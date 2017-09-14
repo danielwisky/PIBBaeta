@@ -63,8 +63,7 @@ public class ProgramacaoDao extends AbstractDao<Programacao, Long> {
         "\"ID_EXTERNO\" TEXT);"); // 10: idExterno
     // Add Indexes
     db.execSQL(
-        "CREATE UNIQUE INDEX " + constraint + "IDX_PROGRAMACAO_ID_EXTERNO ON \"PROGRAMACAO\"" +
-            " (\"ID_EXTERNO\" ASC);");
+        "CREATE UNIQUE INDEX " + constraint + "IDX_PROGRAMACAO_ID_EXTERNO ON \"PROGRAMACAO\"" + " (\"ID_EXTERNO\");");
   }
 
   /**
