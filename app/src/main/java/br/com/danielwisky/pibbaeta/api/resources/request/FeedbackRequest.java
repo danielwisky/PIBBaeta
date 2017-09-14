@@ -1,6 +1,6 @@
 package br.com.danielwisky.pibbaeta.api.resources.request;
 
-import br.com.danielwisky.pibbaeta.dao.PedidoOracao;
+import br.com.danielwisky.pibbaeta.dao.Feedback;
 
 public class FeedbackRequest {
 

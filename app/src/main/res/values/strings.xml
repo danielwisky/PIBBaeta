@@ -3,29 +3,27 @@
 
   <string name="navigation_drawer_open">Abrir navegação</string>
   <string name="navigation_drawer_close">Fechar navegação</string>
-
   <string name="action_settings">Configurações</string>
   <string name="pedido_oracao">Pedido de Oração</string>
   <string name="programacao">Programação</string>
   <string name="enviar">Enviar</string>
-
   <string name="nome">Nome</string>
   <string name="email">E-mail</string>
   <string name="telefone">Telefone</string>
   <string name="pedido">Pedido</string>
   <string name="enviar_pedido">Enviar Pedido</string>
-
   <string name="data">Data</string>
   <string name="local">Local</string>
   <string name="endereco">Endereço</string>
   <string name="descricao">Descrição</string>
   <string name="observacao">Observação</string>
   <string name="mapa">Mapa</string>
+  <string name="feedback">Feedback</string>
+  <string name="configuracao">Configuração</string>
 
   <string name="campo_obrigatorio">Campo obrigatório.</string>
   <string name="email_invalido">Email inválido.</string>
 
   <string name="pedido_oracao_enviado_sucesso">Pedido de oração enviado com sucesso.</string>
   <string name="pedido_oracao_salvo_sucesso">Pedido de oração salvo com sucesso.</string>
-
 </resources>

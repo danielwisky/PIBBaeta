@@ -31,6 +31,10 @@ public class WebClient {
     return retrofit.create(DispositivoClient.class);
   }
 
+  public FeedbackClient getFeedbackClient() {
+    return retrofit.create(FeedbackClient.class);
+  }
+
   public PedidoOracaoClient getPedidoOracaoClient() {
     return retrofit.create(PedidoOracaoClient.class);
   }
