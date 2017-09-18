@@ -11,15 +11,17 @@
       android:id="@+id/nav.pedido_oracao"
       android:icon="@drawable/ic_menu_pedido_oracao"
       android:title="@string/pedido_oracao" />
+  </group>
+
+  <group
+    android:id="@+id/grupo_config_feedback"
+    android:checkableBehavior="single">
 
     <item
       android:id="@+id/nav.configuracao"
       android:icon="@drawable/ic_menu_configuracao"
       android:title="@string/configuracao" />
 
-  </group>
-
-  <group>
     <item
       android:id="@+id/nav.feedback"
       android:icon="@drawable/ic_menu_feedback"

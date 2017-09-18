@@ -28,11 +28,14 @@ public class PIBBaetaMessagingService extends FirebaseMessagingService {
         sincronizarAgendaResponse(mensagem);
       }
     }
+
+    if (remoteMessage.getNotification() != null) {
+      Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+    }
   }
 
   private void sincronizarAgendaResponse(Map<String, String> mensagem) {
     try {
-
       final String json = mensagem.get(AGENDA_RESPONSE);
       final ObjectMapper mapper = new ObjectMapper();
       final AgendaResponse agendaResponse = mapper.readValue(json, AgendaResponse.class);
