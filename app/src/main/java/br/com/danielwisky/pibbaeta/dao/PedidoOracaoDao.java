@@ -32,6 +32,7 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
     public final static Property IdExterno = new Property(6, String.class, "idExterno", false, "ID_EXTERNO");
   }
 
+
   public PedidoOracaoDao(DaoConfig config) {
     super(config);
   }
@@ -55,7 +56,7 @@ public class PedidoOracaoDao extends AbstractDao<PedidoOracao, Long> {
         "\"ID_EXTERNO\" TEXT);"); // 6: idExterno
     // Add Indexes
     db.execSQL(
-        "CREATE UNIQUE INDEX " + constraint + "IDX_PEDIDO_ORACAO_ID_EXTERNO ON \"PEDIDO_ORACAO\"" + " (\"ID_EXTERNO\");");
+        "CREATE UNIQUE INDEX " + constraint + "IDX_PEDIDO_ORACAO_ID_EXTERNO ON \"PEDIDO_ORACAO\"" + " (\"ID_EXTERNO\" ASC);");
   }
 
   /**

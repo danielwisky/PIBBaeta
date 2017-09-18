@@ -53,7 +53,7 @@ public class ProgramacaoFragment extends Fragment {
 
     programacaoQuery = programacaoDao
         .queryBuilder()
-        .orderDesc(Properties.DataInicio, Properties.DataTermino).build();
+        .orderAsc(Properties.DataInicio, Properties.DataTermino).build();
 
     programacaoService = new ProgramacaoService(this.getContext(), daoSession);
     programacaoService.sincronizar();

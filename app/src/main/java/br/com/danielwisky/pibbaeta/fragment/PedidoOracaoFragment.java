@@ -89,9 +89,7 @@ public class PedidoOracaoFragment extends Fragment {
   }
 
   public void enviarPedido() {
-
     if (isFormularioValido()) {
-
       final PedidoOracao pedidoOracao = getPedidoOracao();
 
       Call<Void> enviar = new WebClient().getPedidoOracaoClient().enviar(new PedidoOracaoRequest(pedidoOracao));

@@ -23,7 +23,10 @@
 
   <string name="campo_obrigatorio">Campo obrigatório.</string>
   <string name="email_invalido">Email inválido.</string>
+  <string name="escreva_seu_feedback">Escreva seu feedback</string>
 
   <string name="pedido_oracao_enviado_sucesso">Pedido de oração enviado com sucesso.</string>
   <string name="pedido_oracao_salvo_sucesso">Pedido de oração salvo com sucesso.</string>
+  <string name="feedback_enviado_sucesso">Feedback enviado com sucesso.</string>
+  <string name="feedback_salvo_sucesso">Feedback salvo com sucesso.</string>
 </resources>

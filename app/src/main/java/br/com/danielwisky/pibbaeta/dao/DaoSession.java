@@ -16,17 +16,21 @@ import org.greenrobot.greendao.internal.DaoConfig;
  */
 public class DaoSession extends AbstractDaoSession {
 
+  private final DaoConfig feedbackDaoConfig;
   private final DaoConfig pedidoOracaoDaoConfig;
   private final DaoConfig programacaoDaoConfig;
-  private final DaoConfig feedbackDaoConfig;
 
+  private final FeedbackDao feedbackDao;
   private final PedidoOracaoDao pedidoOracaoDao;
   private final ProgramacaoDao programacaoDao;
-  private final FeedbackDao feedbackDao;
 
   public DaoSession(Database db, IdentityScopeType type,
-      Map<Class<? extends AbstractDao<?, ?>>, DaoConfig> daoConfigMap) {
+      Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
+          daoConfigMap) {
     super(db);
+
+    feedbackDaoConfig = daoConfigMap.get(FeedbackDao.class).clone();
+    feedbackDaoConfig.initIdentityScope(type);
 
     pedidoOracaoDaoConfig = daoConfigMap.get(PedidoOracaoDao.class).clone();
     pedidoOracaoDaoConfig.initIdentityScope(type);
@@ -34,22 +38,23 @@ public class DaoSession extends AbstractDaoSession {
     programacaoDaoConfig = daoConfigMap.get(ProgramacaoDao.class).clone();
     programacaoDaoConfig.initIdentityScope(type);
 
-    feedbackDaoConfig = daoConfigMap.get(FeedbackDao.class).clone();
-    feedbackDaoConfig.initIdentityScope(type);
-
+    feedbackDao = new FeedbackDao(feedbackDaoConfig, this);
     pedidoOracaoDao = new PedidoOracaoDao(pedidoOracaoDaoConfig, this);
     programacaoDao = new ProgramacaoDao(programacaoDaoConfig, this);
-    feedbackDao = new FeedbackDao(feedbackDaoConfig, this);
 
+    registerDao(Feedback.class, feedbackDao);
     registerDao(PedidoOracao.class, pedidoOracaoDao);
     registerDao(Programacao.class, programacaoDao);
-    registerDao(Feedback.class, feedbackDao);
   }
 
   public void clear() {
+    feedbackDaoConfig.clearIdentityScope();
     pedidoOracaoDaoConfig.clearIdentityScope();
     programacaoDaoConfig.clearIdentityScope();
-    feedbackDaoConfig.clearIdentityScope();
+  }
+
+  public FeedbackDao getFeedbackDao() {
+    return feedbackDao;
   }
 
   public PedidoOracaoDao getPedidoOracaoDao() {
@@ -60,7 +65,4 @@ public class DaoSession extends AbstractDaoSession {
     return programacaoDao;
   }
 
-  public FeedbackDao getFeedbackDao() {
-    return feedbackDao;
-  }
 }

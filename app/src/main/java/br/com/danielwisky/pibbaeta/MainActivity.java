@@ -14,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
 import br.com.danielwisky.pibbaeta.delegate.ProgramacaoDelegate;
+import br.com.danielwisky.pibbaeta.fragment.ConfiguracaoFragment;
+import br.com.danielwisky.pibbaeta.fragment.FeedbackFragment;
 import br.com.danielwisky.pibbaeta.fragment.PedidoOracaoFragment;
 import br.com.danielwisky.pibbaeta.fragment.ProgramacaoFragment;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -89,6 +91,12 @@ public class MainActivity extends AppCompatActivity
         break;
       case R.id.nav_pedido_oracao:
         fragment = new PedidoOracaoFragment();
+        break;
+      case R.id.nav_configuracao:
+        fragment = new ConfiguracaoFragment();
+        break;
+      case R.id.nav_feedback:
+        fragment = new FeedbackFragment();
         break;
     }
 
