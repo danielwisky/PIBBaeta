@@ -20,7 +20,7 @@
     <item
       android:id="@+id/nav.configuracao"
       android:icon="@drawable/ic_menu_configuracao"
-      android:title="@string/configuracao" />
+      android:title="@string/configuracoes" />
 
     <item
       android:id="@+id/nav.feedback"

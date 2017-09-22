@@ -14,7 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import br.com.danielwisky.pibbaeta.dao.Programacao;
 import br.com.danielwisky.pibbaeta.delegate.ProgramacaoDelegate;
-import br.com.danielwisky.pibbaeta.fragment.ConfiguracaoFragment;
 import br.com.danielwisky.pibbaeta.fragment.FeedbackFragment;
 import br.com.danielwisky.pibbaeta.fragment.PedidoOracaoFragment;
 import br.com.danielwisky.pibbaeta.fragment.ProgramacaoFragment;
@@ -43,6 +42,7 @@ public class MainActivity extends AppCompatActivity
     toggle.syncState();
 
     FirebaseMessaging.getInstance().subscribeToTopic(TOPIC_AGENDA);
+    FirebaseMessaging.getInstance().subscribeToTopic("notificacao");
 
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity
         fragment = new PedidoOracaoFragment();
         break;
       case R.id.nav_configuracao:
-        fragment = new ConfiguracaoFragment();
+        startActivity(new Intent(this, ConfiguracoesActivity.class));
         break;
       case R.id.nav_feedback:
         fragment = new FeedbackFragment();
