@@ -9,4 +9,8 @@ public class FeedbackRequest {
   public FeedbackRequest(final Feedback feedback) {
     this.descricao = feedback.getDescricao();
   }
+
+  public String getDescricao() {
+    return descricao;
+  }
 }

@@ -1,0 +1,9 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <SwitchPreference
+    android:id="@+id/configuracoes.exibir_notificacao"
+    android:defaultValue="false"
+    android:key="exibir_notificacao_programacao"
+    android:title="@string/exibir_notificacoes" />
+
+</PreferenceScreen>

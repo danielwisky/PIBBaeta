@@ -7,8 +7,8 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class WebClient {
 
-  private static final String BASE_URL = "http://192.168.0.12:8080/rest/";
-  //private static final String BASE_URL = "https://api.danielwisky.com.br/rest/";
+  //private static final String BASE_URL = "http://192.168.0.12:8080/rest/";
+  private static final String BASE_URL = "https://api.danielwisky.com.br/rest/";
 
   private final Retrofit retrofit;
 

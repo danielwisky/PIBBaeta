@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity
     toggle.syncState();
 
     FirebaseMessaging.getInstance().subscribeToTopic(TOPIC_AGENDA);
-    FirebaseMessaging.getInstance().subscribeToTopic("notificacao");
 
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
