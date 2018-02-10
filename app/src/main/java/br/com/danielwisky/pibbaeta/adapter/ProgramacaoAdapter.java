@@ -18,22 +18,24 @@ import java.util.Locale;
 public class ProgramacaoAdapter extends RecyclerView.Adapter {
 
   private final Locale locale = new Locale("pt", "BR");
-  private final SimpleDateFormat format = new SimpleDateFormat("dd MMM", locale);
+  private final SimpleDateFormat format = new SimpleDateFormat("dd MMM yy", locale);
 
   private List<Programacao> programacoes;
 
-  public ProgramacaoAdapter(List<Programacao> programacoes) {
+  public ProgramacaoAdapter(final List<Programacao> programacoes) {
     this.programacoes = programacoes;
   }
 
   @Override
-  public ProgramacaoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+  public ProgramacaoViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
     final View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
     return new ProgramacaoViewHolder(view);
   }
 
   @Override
-  public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+
+  public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
     final ProgramacaoViewHolder viewHolder = (ProgramacaoViewHolder) holder;
     final Programacao programacao = programacoes.get(position);
     viewHolder.bind(programacao);
@@ -45,7 +47,7 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
   }
 
   @Override
-  public int getItemViewType(int position) {
+  public int getItemViewType(final int position) {
     return R.layout.item_programacao;
   }
 
@@ -65,7 +67,7 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter {
       ButterKnife.bind(this, view);
     }
 
-    void bind(Programacao programacao){
+    void bind(final Programacao programacao){
       titulo.setText(programacao.getTitulo());
       tipo.setText(programacao.getTipo());
       data.setText(format.format(programacao.getDataInicio()));

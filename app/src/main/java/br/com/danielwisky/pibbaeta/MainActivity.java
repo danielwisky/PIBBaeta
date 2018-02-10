@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity
   private ActionBarDrawerToggle toggle;
 
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  protected void onCreate(final Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
     drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
 
     FirebaseMessaging.getInstance().subscribeToTopic(TOPIC_AGENDA);
 
-    NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+    final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
 
     displaySelectedScreen(R.id.nav_programacao);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity
 
   @SuppressWarnings("StatementWithEmptyBody")
   @Override
-  public boolean onNavigationItemSelected(MenuItem item) {
+  public boolean onNavigationItemSelected(final MenuItem item) {
     //calling the method displayselectedscreen and passing the id of selected menu
     displaySelectedScreen(item.getItemId());
     //make this method blank
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity
   }
 
   @Override
-  public void lidaComProgramacaoSelecionada(Programacao programacao) {
+  public void lidaComProgramacaoSelecionada(final Programacao programacao) {
 
     final Bundle args = new Bundle();
     final Intent intent = new Intent(this, DetalheProgramacaoActivity.class);
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity
     startActivity(intent);
   }
 
-  private void displaySelectedScreen(int itemId) {
+  private void displaySelectedScreen(final int itemId) {
 
     // Creating fragment object
     Fragment fragment = null;
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity
           .commit();
     }
 
-    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+    final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     drawer.closeDrawer(GravityCompat.START);
   }
 }

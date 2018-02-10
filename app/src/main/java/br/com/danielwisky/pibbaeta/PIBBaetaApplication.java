@@ -15,8 +15,8 @@ public class PIBBaetaApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    DevOpenHelper helper = new DevOpenHelper(this, PIBBAETA_DB);
-    Database db = helper.getWritableDb();
+    final DevOpenHelper helper = new DevOpenHelper(this, PIBBAETA_DB);
+    final Database db = helper.getWritableDb();
     daoSession = new DaoMaster(db).newSession();
   }
 
